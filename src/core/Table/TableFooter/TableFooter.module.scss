@@ -1,0 +1,28 @@
+@import "./src/styles/spacings";
+
+.table-footer {
+  td {
+    padding: $x1;
+
+    .side-left {
+      padding: 0;
+    }
+    .side-right {
+      justify-content: flex-end;
+      flex: 1;
+    }
+  }
+  .spacer {
+    margin-right: $x4;
+  }
+  .link-item {
+    color: var(--brand-color);
+  }
+
+  .disabled {
+    .link-item {
+      color: var(--n300)!important;
+    }
+  }
+}
+

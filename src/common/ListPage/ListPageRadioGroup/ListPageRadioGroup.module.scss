@@ -1,0 +1,22 @@
+@import 'src/styles/media-mixins';
+@import "src/styles/spacings";
+
+.radioGroupContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $x1_5;
+
+  :global(.RadioButtonGroup-container) {
+    width: 100%;
+  }
+
+  :global(.RadioButtonGroup-force-row) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $x1_75 + $x0_125;
+
+    @include media('<desktop') {
+      gap: $x1 + $x0_25;
+    }
+  }
+}

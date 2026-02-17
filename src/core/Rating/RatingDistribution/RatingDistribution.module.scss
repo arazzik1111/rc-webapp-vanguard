@@ -1,0 +1,37 @@
+@import "../../../styles/media-mixins";
+
+.container {
+  margin-bottom: 24px;
+}
+
+.ratingTitle {
+  display: flex;
+  margin-bottom: 16px;
+  align-items: center;
+
+  @include media('<tablet') {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.ratingStars {
+  display: flex;
+  gap: 24px;
+
+  @include media('<tablet') {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rating {
+    display: flex;
+  }
+
+  .progress-bar-rating {
+    padding-left: 96px;
+  }
+}
+

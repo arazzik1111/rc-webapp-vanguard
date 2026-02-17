@@ -1,0 +1,84 @@
+// NOTE: Look in vanguard/Paper/Paper.scss for the styles of dropdown
+
+@import "@styles/spacings";
+
+.vanguard-autocomplete {
+
+  /**
+   * -------------------------------------------------------------------------------------------------------------------
+   * INPUT
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+
+  .MuiAutocomplete-inputRoot {
+    padding-right: 54px !important; //@todo make less when hidden Adornment
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+
+    .MuiAutocomplete-input {
+      padding: 12px 0 12px 18px !important;
+    }
+  }
+
+  //.vanguard-input {
+  //  .MuiOutlinedInput-root {
+  //    .MuiOutlinedInput-input {
+  //      &.MuiAutocomplete-input {
+  //        padding: 3px 12px;
+  //      }
+  //    }
+  //  }
+  //}
+
+  .vanguard-input-tags {
+    max-height: 200px;
+    overflow: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+    overflow: -moz-scrollbars-none; /* For older versions of Firefox, */
+  }
+
+  .vanguard-input-tags::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  /**
+   * -------------------------------------------------------------------------------------------------------------------
+   * ADORNMENTS (clear, caret buttons)
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  .MuiAutocomplete-endAdornment {
+    top: unset;
+
+    .MuiButtonBase-root {
+      width: 24px;
+      height: 24px;
+
+      .MuiSvgIcon-root {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &.vanguard-autocomplete-no-clear-btn {
+    .MuiAutocomplete-clearIndicator {
+      display: none;
+    }
+  }
+
+  &.vanguard-autocomplete-no-caret {
+    .MuiAutocomplete-popupIndicator {
+      display: none;
+    }
+  }
+}
+
+.option-style {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $x1;
+}

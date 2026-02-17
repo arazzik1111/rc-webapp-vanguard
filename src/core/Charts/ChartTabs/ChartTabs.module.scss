@@ -1,0 +1,39 @@
+@import 'src/styles/spacings';
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: $x0_125 solid var(--fn-brd-gl);
+  border-radius: $x0_5;
+  cursor: pointer;
+  padding: 0 $x1_5;
+
+  .tab {
+    display: flex;
+    border-left: $x0_125 solid var(--fn-brd-gl);
+    border-right: $x0_125 solid var(--fn-brd-gl);
+    padding: $x1;
+
+    &.selected {
+      gap: $x1;
+      justify-content: center;
+      align-items: center;
+      padding: 0 $x1_5;
+    }
+
+    &:first-child {
+      border-left: unset;
+      padding-left: unset;
+    }
+
+    &:last-child {
+      border-right: unset;
+      padding-right: unset;
+    }
+
+    &:not(.selected) {
+      transform: translateX(0) !important;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+/**
+ * A div that stores all the modals
+ * ---------------------------------------------------------------------------------------------------------------------
+ */
+#modals-storage {
+}
+
+/**
+ * The first div every modal has
+ * ---------------------------------------------------------------------------------------------------------------------
+ */
+.modalRoot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+
+  background-color: rgba(var(--n900-rgb), 0.4);
+
+  .modalRoot-container {
+    //
+  }
+}

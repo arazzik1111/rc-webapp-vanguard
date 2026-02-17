@@ -1,0 +1,21 @@
+@import '../../../styles/spacings';
+@import '../../../styles/media-mixins';
+
+
+.feature {
+  width: ($x9 * 8) + $x1;
+  max-width: 100%;
+}
+
+.featureBoxAnimationContainer {
+  max-width: 100%;
+}
+
+.upsellButton {
+  max-width: 100%;
+  text-transform: capitalize;
+  @include media('<=tablet') {
+    width: 572px;
+    margin: auto;
+  }
+}

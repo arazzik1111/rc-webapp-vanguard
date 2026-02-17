@@ -1,0 +1,13 @@
+
+.DateRange-container{
+  &.date-range-view-calendar{
+    .rdrDefinedRangesWrapper{
+      display: none;
+    }
+  }
+  &.date-range-view-predefined{
+    .rdrCalendarWrapper{
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import 'src/styles/media-mixins';
+@import "src/styles/spacings";
+
+.labelAndCheckboxes {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkboxes {
+  padding: $x0_5 0 $x1_75;
+  display: flex;
+  gap: $x3 + $x0_125;
+  flex-wrap: wrap;
+
+  @include media('<desktop') {
+  }
+}
+
+.checkbox {
+  background-color: var(--n100);
+  border-radius: $x1_75 + $x0_125;
+  padding: ($x0_5 + $x0_125) $x1;
+}
+

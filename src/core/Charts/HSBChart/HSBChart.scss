@@ -1,0 +1,49 @@
+.hsb-chart-container {
+  position: relative;
+  width: 100%;
+}
+
+.tooltip {
+  background: var(--n800);
+  box-shadow: 0 8px 24px rgba(4, 5, 6, 0.08), 0 4px 8px rgba(4, 5, 6, 0.05), 0 2px 2px rgba(4, 5, 6, 0.03);
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: var(--n000);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+
+  .tooltip-title {
+    margin-top: 0;
+    margin-bottom: 4px;
+    color: var(--n000);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .tooltip-row {
+    display: flex;
+    margin-bottom: 4px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .tooltip-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 12px;
+      margin-right: 4px;
+    }
+
+    .tooltip-text-name{
+      color: var(--n000);
+    }
+
+    .tooltip-number {
+      font-weight: 700;
+      margin-left: 4px;
+    }
+  }
+}

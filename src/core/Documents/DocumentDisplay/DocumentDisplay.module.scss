@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 4px;
+  word-break: break-all;
+}
+
+.image {
+  background-color: var(--n700);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.pdf,
+.image {
+  border-radius: 4px;
+  overflow: hidden;
+}

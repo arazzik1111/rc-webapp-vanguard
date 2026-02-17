@@ -1,0 +1,24 @@
+@import "./src/styles/spacings";
+
+.container {
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
+  &.disabled {
+    cursor: not-allowed !important;
+  }
+
+  .icon {
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+
+    &.rotate-icon {
+      transform: rotate(180deg);
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+}

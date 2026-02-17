@@ -1,0 +1,88 @@
+.Tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  &.hidden{
+    display: none;
+  }
+
+  /**
+   * Tag
+   */
+  .tag {
+    padding: 6px 16px;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+
+    &.tag-primary {
+      background-color: rgba(var(--s400-rgb), 8%);
+    }
+
+    &.tag-default {
+      background-color: rgba(var(--fn-bg-hov-n-gl-rgb), 16%);
+    }
+  }
+
+  /**
+   * Tag Icon Button
+   */
+  .tag-btn-delete {
+    border-radius: 50%;
+    background-color: var(--n000);
+    border: unset;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--n500);
+      border: unset;
+
+      svg {
+        color: var(--n000);
+        fill: var(--n000);
+      }
+    }
+
+    svg {
+      color: var(--n500);
+      fill: var(--n500);
+      transition: all 0.2s;
+    }
+  }
+
+  .chip {
+    padding: 4px 6px;
+    background: #FFFFFF;
+    border-radius: 120px;
+    opacity: 0.5;
+
+    span {
+      font-weight: 600;
+      font-size: 9px;
+      line-height: 8px;
+      text-transform: uppercase;
+    }
+
+    &.tag-primary {
+      background: var(--a1-100);
+      border-radius: 5px;
+      opacity: 0.2;
+      padding: 4px 8px;
+    }
+  }
+}

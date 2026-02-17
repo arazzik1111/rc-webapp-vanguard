@@ -1,0 +1,9 @@
+@import "./src/styles/spacings";
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: $x0_5 + $x0_25;
+    cursor: pointer;
+}
+

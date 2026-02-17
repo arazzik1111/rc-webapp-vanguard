@@ -1,0 +1,414 @@
+/**
+ * BUTTON COMPONENT STYLES
+ * ======================
+ * 
+ * STRUCTURE (Outer to Inner):
+ * .button-container
+ *   └── .button (main element)
+ *       └── .button-inner-container
+ *           ├── .button-icon-container (optional)
+ *           │   └── .button-icon-left/.button-icon-right
+ *           ├── .button-label/.button-text
+ *           └── .loader-spinner (when loading)
+ * 
+ * CONTAINER CLASSES:
+ * • .button-container         - Outer wrapper element
+ * • .button-container-full-width - Full width container variant
+ * 
+ * MAIN BUTTON ELEMENT:
+ * • .button                  - Base button styles (always applied)
+ * 
+ * TYPE VARIANTS:
+ * • .button-default           - Default button style
+ * • .button-primary           - Primary button style (default)
+ * • .button-secondary         - Secondary button style
+ * • .button-shimmer          - Shimmer effect button
+ * • .button-muted            - Muted button style
+ * 
+ * SIZE VARIANTS:
+ * • .size-small              - Small size
+ * • .size-medium             - Medium size (default)
+ * • .size-large              - Large size
+ * • .size-extra-large         - Extra large size
+ * 
+ * SHAPE VARIANT:
+ * • .shape-round              - Rounded button shape
+ * 
+ * STATE MODIFIERS:
+ * • .button-label-hidden      - Hide text label (icon-only)
+ * • .has-icon-left            - Button has left icon
+ * • .has-icon-right           - Button has right icon
+ * • .blurred                - Apply blur effect (muted buttons)
+ * • .inverted               - Inverted colors (muted buttons)
+ * 
+ * INNER ELEMENTS:
+ * • .button-inner-container   - Flex container for button content
+ * • .button-label            - Button text label wrapper
+ * • .button-text             - Button text content
+ * • .button-icon-container    - Icon wrapper container
+ * • .button-icon             - Icon element styling
+ * 
+ * SPECIAL FEATURES:
+ * • .loader-spinner          - Loading spinner element
+ * • .icon-on-hover-container   - Hover effect container
+ * • .icon-small-on-hover       - Small icon on hover
+ * • .icon-large-on-hover       - Large icon on hover
+ */
+
+ @use 'sass:math';
+ @import "../../styles/media-mixins";
+ @import "../../styles/spacings";
+ @import "../../styles/mixins";
+ @import "./button-props";
+ 
+ // To correlate all transition animation time -> button color / background / text background
+ $transitionTime: 200ms;
+ $transitionTimeLong: 400ms;
+ $loader-spinner: $x2;
+ $loader-spinner-t: $x2;
+ $loader-timing: 850ms;
+ 
+ .button-container-full-width,
+ .button-container-full-width .button {
+   width: 100%;
+ }
+ 
+ .button {
+   --padding-y: #{$x1 + $x0_5};
+   --padding-x: #{$x2};
+   --icon-padding: #{$x1+$x0_5};
+   --label-height: #{$x2};
+   --letter-spacing: 0.04em;
+   --border-radius: #{$x0_5};
+ 
+   position: relative;
+   display: inline-flex;
+   align-items: center;
+   text-decoration: none;
+   cursor: pointer;
+   text-align: center;
+   transition: all $transitionTime ease-in-out;
+   -moz-appearance: none;
+   box-sizing: border-box;
+   justify-content: center;
+   overflow: hidden;
+   border-radius: var(--border-radius);
+   height: calc(2 * var(--padding-y) + var(--label-height));
+   padding: var(--padding-y) var(--padding-x);
+ 
+   @include media('>mobile') {
+     --padding-y: #{$x2};
+     --padding-x: #{$x3};
+     --icon-padding: #{$x2};
+   }
+ 
+   // =========================== ELEMENTS ===========================
+ 
+   .button-inner-container {
+     display: flex;
+     align-items: center;
+     gap: $x1;
+   }
+ 
+   .button-icon-container {
+     min-width: #{$x4};
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+ 
+   .button-text {
+     color: var(--text-color);
+   }
+ 
+   .button-icon,
+   [class^="icon-"] {
+     transition: all $transitionTime ease-in-out;
+     padding: calc(var(--icon-padding) / 2) 2 0 calc(var(--icon-padding) / 2);
+     box-sizing: content-box;
+     font-size: var(--label-height);
+     line-height: var(--label-height);
+     font-family: var(--icon-font-family) !important;
+   }
+ 
+   .button-text,
+   .button-icon {
+     font-family: var(--buttons-typeface);
+     font-size: var(--label-height);
+     line-height: calc(var(--label-height) + 7px);
+     display: inline-flex;
+     align-items: center;
+     font-weight: var(--medium);
+     letter-spacing: var(--letter-spacing);
+     text-overflow: ellipsis !important;
+     white-space: nowrap !important;
+     overflow: hidden !important;
+   }
+ 
+   // Loader Spinner
+   .loader-spinner {
+     width: $loader-spinner;
+     height: $loader-spinner;
+     position: relative;
+ 
+     &:before {
+       content: "";
+       display: block;
+       position: absolute;
+       width: $loader-spinner;
+       height: $loader-spinner;
+       background: conic-gradient(transparent 120deg, currentcolor);
+       animation: spin $loader-timing linear infinite;
+       mask-size: $loader-spinner;
+       mask-repeat: no-repeat;
+       mask-position: center;
+       mask-image: url("data:image/svg+xml,%3Csvg fill='none' height='32' viewBox='0 0 32 32' width='32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath clip-rule='evenodd' d='m16 32c8.8364 0 16-7.1635 16-16 0-8.83655-7.1636-16-16-16-8.83643 0-16 7.16345-16 16 0 8.8365 7.16357 16 16 16zm0-4c6.6274 0 12-5.3726 12-12 0-6.62741-5.3726-12-12-12-6.62744 0-12 5.37259-12 12 0 6.6274 5.37256 12 12 12z' fill='%23c4c4c4' fill-rule='evenodd'/%3E%3C/svg%3E");
+     }
+ 
+     svg {
+       opacity: 0;
+     }
+ 
+     @keyframes spin {
+       from {
+         transform: rotate(0deg);
+       }
+ 
+       to {
+         transform: rotate(360deg);
+       }
+     }
+ 
+     @include media('>tablet') {
+       width: $loader-spinner-t;
+       height: $loader-spinner-t;
+ 
+       &:before {
+         width: $loader-spinner-t;
+         height: $loader-spinner-t;
+         mask-size: $loader-spinner-t;
+       }
+     }
+   }
+ 
+   // ====================== MODIFIERS - Types ======================
+   &.button-default {
+     @include buttonProps(default);
+   }
+ 
+   &.button-primary {
+     @include buttonProps(primary);
+   }
+ 
+   &.button-secondary {
+     @include buttonProps($name: secondary);
+   }
+ 
+   &.button-shimmer {
+     @include buttonProps($name: shimmer);
+     border-radius: calc(var(--border-radius) * 3);
+ 
+     &:not(:disabled) {
+       // Apply the Shimmer effect only if the button is not disabled
+       @include shimmerEffect;
+     }
+   }
+ 
+   &.button-muted {
+     position: relative;
+     height: unset; // button height results from line-height & padding!!!
+ 
+     @include buttonProps(muted);
+     
+     &.inverted {
+       @include buttonProps(muted-inverted);
+     }
+ 
+     &.blurred {
+       backdrop-filter: blur(#{$x4});
+       -webkit-backdrop-filter: blur(#{$x4}); 
+     }
+ 
+     &::before {
+       // hover element
+       position: absolute;
+       content: '';
+       display: inline-flex;
+       border-radius: var(--border-radius);
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background-color: #B6C1D3;
+       opacity: 0;
+       transform-origin: center;
+       transform: scale(0.5);
+       transition:
+         transform $transitionTimeLong cubic-bezier(.01,.74,.6,.98),
+         opacity $transitionTimeLong cubic-bezier(.01,.74,.6,.98);
+     }
+ 
+     .button-inner-container {
+       z-index: 1; // to ensure that the inner elements are above the ::before pseudo-element
+     }
+ 
+     &:hover:not(:disabled),
+     &:focus:not(:disabled) {
+       &::before {
+         opacity: 16%;
+         transform: scale(1);
+       }
+     }
+ 
+     &.disabled,
+     &:disabled {
+       opacity: 40%;
+     }
+ 
+     &.size-small {
+       --padding-y: #{$x1};
+       --padding-x: #{$x1_5};
+ 
+       .button-text {
+         font-size: #{$x1_5};
+         line-height: #{$x2};
+       }
+ 
+       .button-inner-container {
+         gap: #{$x0_5};
+       }
+       
+       @include media('>mobile') {
+         --padding-y: #{$x0_5};
+         --padding-x: #{$x1};
+ 
+         .button-inner-container {
+           gap: #{$x0_5};
+         }
+       }
+     }
+ 
+     &.size-medium {
+       --padding-y: #{$x1_5};
+       --padding-x: #{$x2};
+ 
+       .button-text {
+         font-size: #{$x1_5};
+         line-height: #{$x2};
+       }
+ 
+       @include media('>mobile') {
+         --padding-y: #{$x1};
+         --padding-x: #{$x1_5};
+       }
+     }
+ 
+     &.size-large {
+       --padding-y: #{$x1_5};
+       --padding-x: #{$x2};
+ 
+       .button-text {
+         font-size: #{$x1_75};
+         line-height: #{$x2};
+       }
+     }
+ 
+     &.size-extra-large {
+       --padding-y: #{$x1_5};
+       --padding-x: #{$x2};
+ 
+       .button-text {
+         font-size: #{$x2};
+         line-height: #{$x2};
+       }
+ 
+       @include media('>mobile') {
+         --padding-y: #{$x2};
+         --padding-x: #{$x2_5};
+       }
+     }
+ 
+     &.has-icon-left {
+       padding-left: var(--padding-y);
+     }
+   }
+ 
+   // ====================== MODIFIERS - Sizes ======================
+ 
+   &.size-small {
+     @include media('>mobile') {
+       --padding-y: #{$x1};
+       --padding-x: #{$x2};
+       --icon-padding: #{$x2};
+     }
+   }
+ 
+   &.size-medium { /* default button size */ }
+ 
+   &.size-large {
+     --padding-y: #{$x2};
+     --padding-x: #{$x3};
+     --icon-padding: #{$x2};
+ 
+     @include media('>mobile') {
+       --padding-y: #{$x2_5};
+       --padding-x: #{$x4};
+       --icon-padding: #{$x2};
+       --icon-padding: #{$x2_5};
+       --letter-spacing: 0.02em;
+       --label-height: #{$x2_5};
+     }
+   }
+ 
+   // ====================== MODIFIERS - Shapes ======================
+ 
+   &.shape-round {
+     --border-radius: #{$x3};
+   }
+ 
+   // ====================== MODIFIERS - Layout ======================
+ 
+   &.button-label-hidden {
+     padding: var(--padding-y);
+     
+     .button-text {
+       display: none;
+     }
+ 
+     .button-icon {
+       display: block;
+     }
+   }
+ 
+   &.has-icon-left {
+     padding-left: var(--padding-y);
+     
+     .button-icon {
+       padding-left: 0;
+     }
+   }
+ 
+   &.has-icon-right {
+     padding-right: var(--padding-y);
+     
+     .button-icon {
+       padding-right: 0;
+     }
+   }
+ 
+   // ================== ELEMENT MODIFIERS - States ==================
+ 
+   .icon-on-hover-container {
+     position: relative;
+     min-width: #{$x4};
+     min-height: #{$x4};
+   }
+ 
+   .icon-small-on-hover,
+   .icon-large-on-hover {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+   }
+ }

@@ -1,0 +1,103 @@
+@import "../../../styles/media-mixins";
+
+.portal {
+  position: absolute;
+  width: 100%;
+  max-width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.container {
+  margin-top: 4px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  min-height: 50px;
+  background: var(--functional-bg-surface, #fff);
+  border: 1px solid var(--ai, rgba(131, 119, 228, 0.25));
+  box-shadow: 0px 16px 64px 0px rgba(4, 5, 6, 0.08), 0px 12px 20px 0px rgba(4, 5, 6, 0.05),
+    0px 6px 8px 0px rgba(4, 5, 6, 0.03);
+}
+
+.topLine {
+  position: relative;
+  width: 100%;
+
+  > div {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.menu {
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rightMenu {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  @include media("<mobile") {
+    display: none;
+  }
+}
+
+.x {
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+}
+
+.adjustContainer {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.adjustItem {
+  all: unset;
+  width: 100%;
+  border-radius: 8px;
+  transition: all 0.25s ease-in-out;
+  overflow: hidden;
+
+  .content {
+    display: flex;
+    padding: 10px 16px;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .rightIcon {
+    margin-left: auto;
+  }
+
+  :hover {
+    cursor: pointer;
+    background: var(--functional-bg-surface-hover, #f5f5f5);
+  }
+}
+
+.dropdown {
+  background: var(--functional-bg-surface, #fff);
+  box-shadow: 0px 16px 64px 0px rgba(4, 5, 6, 0.08), 0px 12px 20px 0px rgba(4, 5, 6, 0.05),
+    0px 6px 8px 0px rgba(4, 5, 6, 0.03);
+  border-radius: 8px;
+  padding: 8px;
+  right: 0;
+  top: 0;
+  position: absolute;
+  min-width: 200px;
+}
+
+.animation {
+  path {
+    fill: var(--acc-01500, #3c28cc);
+  }
+}

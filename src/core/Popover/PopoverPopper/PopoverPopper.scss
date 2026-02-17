@@ -1,0 +1,165 @@
+.vanguard-popover {
+  &.MuiTooltip-popper {
+    /**
+     * Tooltip Style
+     * -------------------------------------------------------------------------------------------------------------------
+     */
+    .MuiTooltip-tooltip {
+      background: var(--n000);
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+      border-radius: 4px;
+      padding: 8px 16px;
+      text-align: center;
+
+      .MuiTooltip-arrow {
+        width: 0;
+        height: 0;
+        border-width: 12px 12px 0 12px;
+        border-color: var(--n000) transparent transparent transparent;
+        border-style: solid;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    /**
+     * Placement
+     * -------------------------------------------------------------------------------------------------------------------
+     */
+    &[data-popper-placement*="top"] {
+      .MuiTooltip-tooltip {
+        margin-bottom: 18px !important;
+
+        .MuiTooltip-arrow {
+          filter: drop-shadow(0px 4px 2px rgba(4, 5, 6, 0.1));
+          border-color: var(--n000) transparent transparent transparent;
+          border-width: 12px 12px 0 12px;
+          margin-bottom: -11px;
+        }
+      }
+    }
+
+    &[data-popper-placement*="bottom"] {
+      .MuiTooltip-tooltip {
+        margin-top: 18px !important;
+
+        .MuiTooltip-arrow {
+          filter: drop-shadow(0px -4px 2px rgba(4, 5, 6, 0.1));
+          border-color: transparent transparent var(--n000) transparent;
+          border-width: 0 12px 12px 12px;
+          margin-top: -11px;
+        }
+      }
+    }
+
+    &[data-popper-placement*="left"] {
+      .MuiTooltip-tooltip {
+        margin-right: 18px !important;
+
+        .MuiTooltip-arrow {
+          filter: drop-shadow(4px 0 2px rgba(4, 5, 6, 0.1));
+          border-color: transparent transparent transparent var(--n000);
+          border-width: 12px 0 12px 12px;
+          margin-right: -11px;
+        }
+      }
+    }
+
+    &[data-popper-placement*="right"] {
+      .MuiTooltip-tooltip {
+        margin-left: 18px !important;
+
+        .MuiTooltip-arrow {
+          filter: drop-shadow(-4px 0px 2px rgba(4, 5, 6, 0.1));
+          border-color: transparent var(--n000) transparent transparent;
+          border-width: 12px 12px 12px 0;
+          margin-left: -11px;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * DARK THEME
+ * -------------------------------------------------------------------------------------------------------------------
+ */
+.vanguard-popover {
+  &.MuiTooltip-popper-dark {
+    /**
+      * Tooltip Style
+      * -------------------------------------------------------------------------------------------------------------------
+      */
+    .MuiTooltip-tooltip {
+      background: var(--n800);
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+      border-radius: 4px;
+      padding: 8px 16px;
+      text-align: center;
+      color: var(--n000);
+
+      > span {
+        color: var(--n000);
+      }
+
+      .MuiTooltip-arrow {
+        width: 0;
+        height: 0;
+        border-width: 12px 12px 0 12px;
+        border-color: var(--n800) transparent transparent transparent;
+        border-style: solid;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    /**
+     * Placement
+     * -------------------------------------------------------------------------------------------------------------------
+     */
+    &[data-popper-placement*="top"] {
+      .MuiTooltip-tooltip {
+        color: var(--n000);
+
+        .MuiTooltip-arrow {
+          border-color: var(--n800) transparent transparent transparent;
+        }
+      }
+    }
+
+    &[data-popper-placement*="bottom"] {
+      .MuiTooltip-tooltip {
+        color: var(--n000);
+
+        .MuiTooltip-arrow {
+          border-color: transparent transparent var(--n800) transparent;
+        }
+      }
+    }
+
+    &[data-popper-placement*="left"] {
+      .MuiTooltip-tooltip {
+        color: var(--n000);
+
+        .MuiTooltip-arrow {
+          border-color: transparent transparent transparent var(--n800);
+        }
+      }
+    }
+
+    &[data-popper-placement*="right"] {
+      .MuiTooltip-tooltip {
+        color: var(--n000);
+
+        .MuiTooltip-arrow {
+          border-color: transparent var(--n800) transparent transparent;
+        }
+      }
+    }
+  }
+}
+

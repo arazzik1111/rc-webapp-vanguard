@@ -1,0 +1,25 @@
+{
+  "mode": "selective",
+  "components": [
+    "Button",
+    "Icon",
+    "Text",
+    "Input",
+    "Modal"
+  ],
+  "assets": {
+    "icons": true,
+    "logos": false,
+    "flags": false,
+    "photos": false,
+    "gifs": false,
+    "avatarIcons": true,
+    "decorations": false,
+    "placeholders": false
+  },
+  "buildOptions": {
+    "treeshaking": true,
+    "minify": true,
+    "sourcemap": false
+  }
+}

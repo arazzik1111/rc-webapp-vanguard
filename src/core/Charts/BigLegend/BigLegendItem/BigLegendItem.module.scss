@@ -1,0 +1,65 @@
+@import "@styles/spacings";
+@import "@styles/media-mixins";
+
+.container {
+  display: flex;
+  gap: $x1;
+  align-items: flex-start;
+
+  .icon-container {
+    padding-top: $x1;
+  }
+}
+
+.bottomContainerPadding {
+  padding-left: $x5;
+}
+
+.badge {
+  margin-right: $x0_5;
+}
+
+.data {
+  display: flex;
+  flex-direction: row;
+
+  // gap is causing problems to mail reports, so please let it commented
+  // gap: $bit;
+  // @todo Radu, please solve Gap bug on mail reports -> meanwhile I implemented a margin solution
+  >* {
+    margin: 0 $x0_5 $x0_5 0;
+  }
+
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.data-out-of-series {
+  display: flex;
+  flex-direction: row;
+
+  // gap is causing problems to mail reports, so please let it commented
+  // gap: $bit;
+  // @todo Radu, please solve Gap bug on mail reports -> meanwhile I implemented a margin solution
+  >* {
+    margin: 0 $x0_5 $x0_5 0;
+  }
+
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.percentage-container {
+  position: relative;
+  align-self: baseline;
+}
+
+.avatar {
+  margin-right: $x0_5;
+  display: inline-flex;
+  align-items: center;
+  
+  @include media('<mobile') {
+    margin-bottom: $x0_5;
+  }
+}

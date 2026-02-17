@@ -1,0 +1,31 @@
+@import "../../../styles/spacings";
+
+$discountBadge: $x2_5 * 6;
+
+.badge {
+  transform: rotate(15deg);
+  border: $x0_25 solid var(--fn-bg);
+  background: #E1144D;
+  border-radius: 50%;
+  width: $discountBadge;
+  height: $discountBadge;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap:$x0_25;
+
+  .dashed-border {
+    position: absolute;
+    width: $discountBadge - $x1_5;
+    height: $discountBadge - $x1_5;
+    border: $x0_25 dashed var(--fn-bg);
+    border-radius: 50%;
+  }
+
+  >span {
+    width: 80%;
+  }
+}
+
+

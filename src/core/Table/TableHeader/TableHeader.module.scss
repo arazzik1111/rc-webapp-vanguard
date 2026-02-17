@@ -1,0 +1,70 @@
+@import "./src/styles/spacings";
+
+.table-head {
+
+
+  .table-cell {
+    padding: $x0_5;
+    text-align: left;
+    border-bottom: 2px solid var(--n200);
+    position: relative;
+
+    &.grey-theme {
+      background: var(--n100);
+    }
+
+    &.column-sort-desc {
+
+    }
+
+    &.column-sort-asc {
+
+    }
+
+    .table-centered {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .table-end {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      text-align: end;
+    }
+
+    &.table-sticky {
+      position: sticky;
+      left: 0;
+      background-color: var(--fn-bg);
+      z-index: 1;
+    }
+
+    &.table-seam-shadow::after {
+      content: '';
+      position: absolute;
+      top: -$x0_125;
+      bottom: -$x0_125;
+      left: calc(100% - ($x0_25 + $x0_125));
+      width: $x1 + $x0_25;
+      pointer-events: none;
+      background: linear-gradient(to right, rgba(var(--n400-rgb), 0.45) 0, rgba(var(--n400-rgb), 0.30) 0, rgba(var(--n400-rgb), 0.12) $x0_25, rgba(var(--n400-rgb), 0) 100%);
+    }
+
+    .cell-text {
+      position: relative;
+      line-height: 16px;
+
+      &.has-prefix {
+        padding-left: 32px;
+      }
+
+      .cell-prefix {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+}

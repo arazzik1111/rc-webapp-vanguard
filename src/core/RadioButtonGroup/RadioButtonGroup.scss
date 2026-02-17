@@ -1,0 +1,60 @@
+@import '../../styles/spacings';
+@import '../../styles/media-mixins';
+
+.RadioButtonGroup-container {
+  .RadioButtonGroup-title {
+    padding-bottom: $x2;
+
+    &.RadioButtonGroup-title-no-padding {
+      padding: 0;
+    }
+  }
+
+  .Form-container {
+    display: flex;
+    flex-direction: row;
+    gap: $x2;
+    flex-wrap: wrap;
+
+    @include media('<tablet') {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: $x2_5;
+      gap: $x1;
+    }
+
+    @include media('<mobile') {
+      padding-top: $x1;
+    }
+
+    &.RadioButtonGroup-force-no-padding {
+      padding-top: 0;
+
+      @include media('<mobile') {
+        padding-top: 0;
+      }
+    }
+
+    &.RadioButtonGroup-force-col {
+      display: flex;
+      flex-direction: column;
+      gap: $x1;
+    }
+
+    &.RadioButtonGroup-force-row {
+      display: flex;
+      flex-direction: row;
+      gap: $x1;
+    }
+
+    &.success {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: $x4;
+
+      @include media ("<=mobile") {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

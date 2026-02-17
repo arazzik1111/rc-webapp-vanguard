@@ -1,0 +1,53 @@
+@import "../../../../styles/spacings";
+@import "../../../../styles/media-mixins";
+
+.header {
+  // position: sticky;
+  // top: calc(-1*(var(--header-height) - 5px));
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  padding: 48px 0;
+  gap: 24px;
+}
+
+.shadow {
+  -webkit-box-shadow: -5px 24px 20px -11px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: -5px 24px 20px -11px rgba(0, 0, 0, 0.16);
+  box-shadow: -5px 24px 20px -11px rgba(0, 0, 0, 0.16);
+}
+
+.line {
+  border-bottom: 1px solid var(--fn-divider-gl);
+}
+
+.actionBtns {
+  display: flex;
+  gap: 8px;
+}
+
+.headerBottom {
+  // Styles for the bottom section of the header
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: $x2;
+  margin-bottom: $x2;
+
+  @include media("<mobile") {
+    flex-flow: column-reverse;
+  }
+}
+
+.checkboxesContainer {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--n200);
+  padding: $x2 0;
+
+  @include media("<tablet") {
+    padding: $x1_5 0;
+  }
+}

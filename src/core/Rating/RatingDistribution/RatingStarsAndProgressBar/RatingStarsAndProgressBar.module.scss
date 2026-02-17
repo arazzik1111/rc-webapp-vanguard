@@ -1,0 +1,26 @@
+.star-rating-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .star-rating {
+    position: absolute;
+    left: -12px;
+    transform: translateX(-100%);
+  }
+}
+
+.ratingDistributionProgressBar {
+  margin-right: 12px;
+
+  .progressBar:first-child {
+    span {
+      border-radius: 0 50px 50px 0
+    }
+  }
+}

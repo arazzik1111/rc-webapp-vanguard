@@ -1,0 +1,87 @@
+// Storybook preview
+
+.sb-show-main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  #root {
+    width: 100%;
+  }
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * RESETS
+ * ---------------------------------------------------------------------------------------------------------------------
+ */
+
+// Box-sizing
+
+* {
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+// Placeholders
+
+:focus::-webkit-input-placeholder {
+  color: unset;
+}
+
+:focus::-moz-placeholder {
+  color: unset;
+}
+
+:focus:-moz-placeholder {
+  color: unset;
+}
+
+// JUMP .img-fluid class
+
+.img-fluid {
+  width: unset;
+}
+
+.modal-header {
+  border-bottom: unset !important; // override default modal border from _modal.scss (in Vayu)
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * MUI Root Styles
+ * ---------------------------------------------------------------------------------------------------------------------
+ */
+
+.MuiAutocomplete-paper,
+.MuiMenu-root > .MuiPaper-root {
+  background: var(--n000);
+  box-shadow: 0 8px 16px rgba(4, 5, 6, 0.1);
+  border-radius: 4px;
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.MuiAutocomplete-listbox {
+  font-size: 16px;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * 3rd Party Overrides
+ * ---------------------------------------------------------------------------------------------------------------------
+ */
+
+.oao-pi-overlay-blocker {
+  z-index: 100000 !important; // Ionos Contact Support must be above all the modals and overlays
+}
+
+.oao-pi-overlay .oao-pi-overlay-container {
+  z-index: 100001 !important; // Ionos Contact Support must be above all the modals and overlays
+}

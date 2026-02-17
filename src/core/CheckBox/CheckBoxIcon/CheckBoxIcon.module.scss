@@ -1,0 +1,15 @@
+.checkboxIcon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-inline: auto;
+  width: fit-content;
+  opacity: 0;
+  visibility: hidden; // Added for proper hiding
+  transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+  &.show {
+    opacity: 1;
+    visibility: visible; // Matches the opacity transition
+  }
+}

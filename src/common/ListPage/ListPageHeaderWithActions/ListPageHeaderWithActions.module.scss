@@ -1,0 +1,73 @@
+@import "@styles/spacings";
+@import "@styles/media-mixins";
+
+.container {
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: $x3;
+  padding: $x6 $x8 $x3 $x8;
+
+  @include media("<desktop") {
+    padding-left: $x4;
+    padding-right: $x4;
+  }
+  @include media("<tablet") {
+    padding-left: $x3;
+    padding-right: $x3;
+  }
+
+
+  .filter-slot {
+    display: inline-flex;
+    align-items: center;
+    gap: $x2
+  }
+
+  &.noPaddingTop {
+    padding-top: 0;
+  }
+
+  &.line {
+    border-bottom: $x0_125 solid var(--fn-divider-gl);
+  }
+}
+
+.actionBtns {
+  display: flex;
+  gap: $x1;
+}
+
+.headerBottom {
+  // Styles for the bottom section of the header
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: $x2;
+  margin-bottom: $x2;
+
+  @include media("<mobile") {
+    flex-flow: column-reverse;
+  }
+}
+
+.checkboxesContainer {
+  display: flex;
+  flex-direction: column;
+  padding: $x2 0;
+
+  &.line {
+    border-top: $x0_125 solid var(--n200);
+  }
+
+  @include media("<tablet") {
+    padding: $x1_5 0;
+  }
+}
+
+.shadow {
+  -webkit-box-shadow: -($x0_5 + $x0_125) $x3 $x2_5 -($x1_5 - $x0_125) rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: -($x0_5 + $x0_125) $x3 $x2_5 -($x1_5 - $x0_125) rgba(0, 0, 0, 0.16);
+  box-shadow: -($x0_5 + $x0_125) $x3 $x2_5 -($x1_5 - $x0_125) rgba(0, 0, 0, 0.16);
+}

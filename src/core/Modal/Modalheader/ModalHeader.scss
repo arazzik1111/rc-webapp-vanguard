@@ -1,0 +1,62 @@
+@import '../../../styles/spacings';
+@import '../../../styles/media-mixins';
+
+.modal-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-align: center;
+  padding: 32px 18px 0 18px;
+
+  /**
+   * TITLE & ICON
+   */
+  .modal-header-title-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+
+    .modal-header-icon-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  /**
+   * CLOSE BUTTON
+   */
+  .modal-header-close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    @include media('<tablet') {
+      &.modal-header-close-btn-hidden-mobile {
+        display: none;
+      }
+    }
+  }
+}
+
+/**
+ * FULLSCREEN MODAL
+ * ---------------------------------------------------------------------------------------------------------------------
+ */
+.modal-fullscreen {
+  .modal-header {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 984px;
+  }
+}
+

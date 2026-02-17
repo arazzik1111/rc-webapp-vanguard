@@ -1,0 +1,18 @@
+@import 'src/styles/spacings';
+
+.mask {
+  font-family: 'Courier';
+  font-style: normal;
+  font-weight: 400;
+  font-size: $x4 + $x1;
+  line-height: $x6;
+  border: none;
+  background-color: var(--fn-bg-var);
+  color: var(--fn-fg);
+  width: $x6 * 3 + $x5;
+
+  letter-spacing: 0.15em;
+  &:focus-visible {
+    outline: none;
+  }
+}

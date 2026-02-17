@@ -1,0 +1,16 @@
+.btn {
+  min-width: 32px;
+  height: 32px;
+  border-radius: 4px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &.active {
+    //background: var(--fn-bg-hov-p-gl);
+  }
+}
+
+

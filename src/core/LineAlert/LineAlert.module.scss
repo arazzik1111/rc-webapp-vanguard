@@ -1,0 +1,45 @@
+$borderWidth: 3px;
+
+.line-alert {
+  padding: 8px 12px 8px 8px;
+
+  min-height: 50px;
+  min-width: 200px;
+  max-width: 500px;
+
+  -webkit-box-shadow: 13px 5px 19px 5px rgba(0, 0, 0, 0.13);
+  box-shadow: 13px 5px 19px 5px rgba(0, 0, 0, 0.13);
+
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+
+  @mixin alertType($color, $textColor) {
+    border-left: $borderWidth solid var(--#{$color});
+    background-color: var(--n000);
+
+    .text {
+      color: var(--#{$textColor});
+    }
+  }
+
+  &.info {
+    @include alertType('p500', 'p500');
+  }
+
+  &.success {
+    @include alertType('s500', 's900');
+  }
+
+  &.danger {
+    @include alertType('e500', 'e500');
+  }
+
+  &.warning {
+    @include alertType('w500', 'w500');
+  }
+}

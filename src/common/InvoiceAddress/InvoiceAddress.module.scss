@@ -1,0 +1,13 @@
+@import '../../../styles/media-mixins';
+@import '../../../styles/spacings';
+
+.invoice-address {
+  .name {
+    margin-bottom: $x0_5;
+  }
+
+  .address {
+    color: var(--n500);
+  }
+}
+

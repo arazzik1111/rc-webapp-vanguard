@@ -1,0 +1,29 @@
+:root {
+  --ai-start-color: hsl(from var(--ai-base-color) calc(h + 123) 100 56);
+  --ai-start-color-lighter: hsl(from var(--ai-start-color) h s calc(l + 10));
+  --ai-end-color: hsl(from var(--ai-base-color) calc(h - 35) 93 60);
+  --ai-border-size: 4px;
+  --ai-border-size-outside: calc(var(--ai-border-size) + 2px);
+  --ai-border-radius: 16px;
+  --ai-stroke-color: rgba(from var(--global-background) r g b / 0.6);
+  --ai-blur-width: 24px;
+}
+@property --ai-bg-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+@keyframes aiSpinAnimation {
+  to {
+    --ai-bg-angle: 1turn;
+  }
+}
+@keyframes aiGradientAnimation {
+  0% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}

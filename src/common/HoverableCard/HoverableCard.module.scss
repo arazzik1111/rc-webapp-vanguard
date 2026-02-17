@@ -1,0 +1,49 @@
+@import '../../../styles/media-mixins';
+@import '../../../styles/spacings';
+
+.hoverable-card {
+    background-color: var(--n000);
+    border-radius: $x1;
+
+    &.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    &.hover-enabled {
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--n100);
+        }
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        gap: $x1;
+
+        .title {
+            margin-bottom: $x0_5;
+        }
+
+        @include media('<desktop') {
+            justify-content: space-between;
+        }
+
+        .subtitles-container {
+            gap: $x2;
+
+            .separator {
+                width: $x0_125;
+                height: $x3;
+                box-shadow: inset -1px 0px 0px var(--n200);
+            }
+        }
+    }
+
+    .content {
+        color: var(--n500);
+        margin-top: $x0_5;
+    }
+}

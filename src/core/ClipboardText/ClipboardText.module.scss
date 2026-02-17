@@ -1,0 +1,25 @@
+
+.copyGroup {
+  display: flex;
+  gap: 16px;
+  padding: 8px 0px;
+  align-items: center;
+  border-bottom: 1px solid var(--functional-divider-gl, #e5e9f0);
+}
+
+.copy {
+  display: flex;
+  min-width: 48px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--functional-divider-gl, #e5e9f0);
+  &:hover {
+    background-color: var(--n100);
+    border: 1px solid var(--n200);
+  }
+}
+
+

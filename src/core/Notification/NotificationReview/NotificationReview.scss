@@ -1,0 +1,11 @@
+.notification-review-body{
+  display: flex;
+  flex-direction: column;
+  .review-stars{
+    margin: 24px;
+  }
+  .text-part{
+    border: 1px solid green;
+  }
+}
+

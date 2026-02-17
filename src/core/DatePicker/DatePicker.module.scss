@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  :global {
+    .vanguard-input {
+      .MuiOutlinedInput-root {
+        cursor: pointer;
+        .MuiOutlinedInput-input {
+          cursor: pointer;
+          padding-right: 0;
+        }
+      }
+
+      .MuiInputAdornment-root {
+        z-index: 1;
+
+        &.MuiInputAdornment-positionEnd {
+          margin-right: 18px;
+        }
+      }
+    }
+  }
+}
+
+.icon {
+  right: 12px;
+  top: 16px;
+  position: absolute;
+}
+
+.paper {
+  box-shadow: 0px 8px 24px 0px rgba(4, 5, 6, 0.08), 0px 4px 8px 0px rgba(4, 5, 6, 0.05),
+    0px 2px 2px 0px rgba(4, 5, 6, 0.03) !important;
+  border-radius: 4px !important;
+  color: var(--n700);
+}

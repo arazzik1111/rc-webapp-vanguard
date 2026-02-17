@@ -1,0 +1,37 @@
+.container {
+  min-width: 300px;
+  background-color: var(--n000);
+  height: 100%;
+  padding: 16px 24px 24px 24px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 2px 2px 0px rgba(4, 5, 6, 0.05), 0px 4px 8px 0px rgba(4, 5, 6, 0.03),
+    0px 8px 24px 0px rgba(4, 5, 6, 0.02);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &.noPadding {
+    padding: 0;
+  }
+}
+
+.infobox {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.withTitleAndInfoIcon {
+  .title {
+    padding-right: 24px;
+  }
+}
+
+.childrenContainer {
+  flex: 1;
+}

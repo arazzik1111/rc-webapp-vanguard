@@ -1,0 +1,27 @@
+:global {
+  .MuiPaper-root {
+    .MuiList-root {
+      .MuiMenuItem-root {
+        &.Mui-selected {
+          span.paragraph {
+            color: var(--fn-fg-cta);
+          }
+
+          background-color: var(--n000) !important;
+        }
+      }
+    }
+  }
+}
+
+.grey-theme {
+  background: var(--fn-bg-var);
+  border-radius: 4px;
+  border-color: var(--fn-bg-var);
+}
+
+.desc-under-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+}

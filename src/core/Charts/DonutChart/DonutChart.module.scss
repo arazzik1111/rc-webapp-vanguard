@@ -1,0 +1,23 @@
+.donut {
+  position: relative;
+  width: 172px;
+  height: 172px;
+
+  .innerContainer {
+    position: relative;
+    width: 240px; // This is due to paddings that Apex Donut Chart has
+    height: 172px;
+    transform: translateX(-15%);
+  }
+}
+
+.children {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

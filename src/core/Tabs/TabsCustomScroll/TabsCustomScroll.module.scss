@@ -1,0 +1,28 @@
+@import "./src/styles/spacings";
+@import '../../../styles/media-mixins';
+
+.custom-scroll-button-wrapper {
+  padding: $x1 + $x0_25;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -$x0_25 0 $x0_25 rgba(4, 5, 6, 0.03), -$x0_5 0 $x1 rgba(4, 5, 6, 0.05), -$x1 0 $x3 rgba(4, 5, 6, 0.08);
+  border-radius: $x6 0 0 $x6;
+  position: absolute;
+  top: 12%;
+  border: $x0_5 solid var(--n000);
+  border-right: none;
+  background-color: var(--n200);
+  z-index: 9999;
+
+  &.right {
+    right: 0;
+  }
+
+  &.left {
+    left: 0;
+    transform: rotate(180deg);
+  }
+}
+
+

@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  padding: 8px;
+  background: var(--n100);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 300ms linear;
+  &:hover {
+    background: var(--n200);
+    text-decoration: none;
+  }
+}
+
+.editGroup {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}

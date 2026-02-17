@@ -1,0 +1,29 @@
+@import "./src/styles/spacings";
+
+  .verification-code-input {
+    display: flex;
+    gap: $x1;
+  }
+  
+  .verification-code-input > .input-container {
+    border: solid $x0_125 var(--n300);
+    font-family: 'Lato';
+    font-size: $x2;
+    color: var(--n700);
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: $x0_5;
+    -webkit-appearance: initial;
+  }
+  
+  .verification-code-input > .input-container:focus {
+    outline: none;
+    border: $x0_125 solid var(--p500);
+    caret-color: var(--p500);
+  }
+
+  .input-container { 
+    height: 48px;
+    width: 45px;
+  }
+

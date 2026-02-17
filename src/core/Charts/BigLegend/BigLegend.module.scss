@@ -1,0 +1,19 @@
+@import "@styles/spacings";
+@import "@styles/media-mixins";
+
+.big-legend-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: flex-start;
+  gap: $x3;
+  @include media('<mobile') {
+    margin-right: 0px;
+  }
+}
+
+.big-legend-container-margin {
+  margin-right: 200px;
+}

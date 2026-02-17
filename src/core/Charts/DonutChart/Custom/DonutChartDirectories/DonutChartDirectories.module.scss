@@ -1,0 +1,30 @@
+@import '../../../../../styles/spacings';
+@import '../../../../../styles/media-mixins';
+
+.directoriesStatus {
+  display: flex;
+  gap: var(--1);
+  align-items: center;
+
+  @include media('<=desktop') {
+    flex-direction: column;
+    gap: var(--2);
+  }
+}
+
+.badges {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--1);
+  @include media('<=desktop') {
+    align-items: center;
+  }
+}
+
+.badge {
+  margin-right: auto;
+  @include media('<=desktop') {
+    margin-right: unset;
+  }
+}

@@ -1,0 +1,33 @@
+.Alert-container {
+  .rc-alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.125rem;
+
+    &.rc-alert-danger {
+      color: var(--e900);
+      background-color: var(--e100);
+      border-color: var(--e500);
+    }
+
+    &.rc-alert-info {
+      color: var(--p500);
+      background-color: var(--p100);
+      border-color: var(--p500);
+    }
+
+    &.rc-alert-warn {
+      color: var(--w900);
+      background-color: var(--w100);
+      border-color: var(--w500);
+    }
+
+    &.rc-alert-success {
+      color: var(--s500);
+      background-color: var(--s100);
+      border-color: var(--s500);
+    }
+  }
+}

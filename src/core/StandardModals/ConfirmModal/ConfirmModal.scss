@@ -1,0 +1,16 @@
+@import '../../../styles/spacings';
+
+.ConfirmModal-container {
+
+  .modal-header {
+    border-top-left-radius: $x1;
+    border-top-right-radius: $x1;
+  }
+  .modal-footer {
+    box-shadow: inset 0 $x0_125 0 var(--n200);
+
+    .modal-footer-buttons {
+      justify-content: space-between;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import 'src/styles/spacings';
+@import 'src/styles/media-mixins';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $x1;
+
+  @include media('<tablet') {
+    text-align: center;
+    flex-direction: column;
+  }
+}
+
+.container-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $x3;
+
+  @include media('<tablet') {
+    text-align: center;
+    flex-direction: column;
+  }
+}

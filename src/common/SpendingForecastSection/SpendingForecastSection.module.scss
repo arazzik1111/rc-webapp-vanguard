@@ -1,0 +1,7 @@
+@import '../../../styles/media-mixins';
+@import '../../../styles/spacings';
+
+.spending-forecast-container {
+  border: 1px solid var(--i100);
+  border-radius: $x0_5;
+}

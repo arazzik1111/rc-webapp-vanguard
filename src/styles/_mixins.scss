@@ -1,0 +1,124 @@
+@use "@styles/_ai_variables";
+
+
+@mixin rgba-background($hexcolor, $opacity) {
+  background-color: var($hexcolor);
+  background-color: rgba(var($hexcolor), $opacity);
+}
+
+@mixin container() {
+  // padding-right: clamp(1rem, -36.463rem + 58.54vw, 25rem);
+  // padding-left: clamp(1rem, -36.463rem + 58.54vw, 25rem);
+  max-width: 1184px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin shimmerEffect($duration: 8s) {
+  z-index: 1;
+  background-color: var(--ai-base-color) !important;
+
+  // Content stays above the gradient layers
+  >* {
+    position: relative;
+    z-index: 2;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+
+    background-size: 400% 400%;
+    background-position: center;
+
+
+  }
+
+  &::before {
+    background: linear-gradient(var(--ai-bg-angle), var(--ai-start-color-lighter), var(--ai-base-color));
+    animation:
+      fadeGradient1 6s ease-in-out infinite,
+      aiSpinAnimation 6s linear infinite;
+  }
+
+  &::after {
+    background: linear-gradient(var(--ai-bg-angle), var(--ai-base-color), var(--ai-end-color));
+    animation:
+      fadeGradient2 6s ease-in-out infinite,
+      aiSpinAnimation 6s linear infinite;
+  }
+
+
+}
+
+@keyframes fadeGradient1 {
+  0% {
+    opacity: .8;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .8;
+  }
+}
+
+@keyframes fadeGradient2 {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@mixin hoverEffect() {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0.75);
+    overflow: hidden;
+    transition: 200ms ease-in all;
+  }
+
+  &:hover {
+    &::before {
+      background-color: var(--n100);
+      transform: scale(1);
+      transition: 150ms ease-in all;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.link {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.icon {
+  align-items: center;
+}
+
+.disabled {
+  color: var(--n300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+

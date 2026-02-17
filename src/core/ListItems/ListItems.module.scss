@@ -1,0 +1,10 @@
+@import "src/styles/spacings";
+@import "src/styles/media-mixins";
+.container {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+

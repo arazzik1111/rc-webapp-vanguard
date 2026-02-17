@@ -1,0 +1,108 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/",
+    "sourceMap": true,
+    "preserveConstEnums": true,
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "es6",
+    "lib": [
+      "es2021",
+      "dom"
+    ],
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noEmit": false,
+    "baseUrl": "./",
+    "paths": {
+
+      "@vanguard/*": [
+        "src/vanguard/",
+        "src/vanguard/*"
+      ],
+      "@components/*": [
+        "src/components/",
+        "src/components/*"
+      ],
+      "@helpers/*": [
+        "src/helpers/",
+        "src/helpers/*"
+      ],
+      "@test-utils/*": [
+        "test-utils",
+        "test-utils/*"
+      ],
+      "@mocks/*": [
+        "src/__mocks__",
+        "src/__mocks__/*"
+      ],
+      "@custom-hooks/*": [
+        "src/custom-hooks",
+        "src/custom-hooks/*"
+      ],
+      "@data-services/*": [
+        "src/data-services",
+        "src/data-services/*"
+      ],
+      "@services/*": [
+        "src/services",
+        "src/services/*"
+      ],
+      "@stores/*": [
+        "src/stores",
+        "src/stores/*"
+      ],
+      "@models/*": [
+        "src/models",
+        "src/models/*"
+      ],
+      "@common/*": [
+        "src/components/_common/",
+        "src/components/_common/*"
+      ],
+      "@widgets/*": [
+        "src/components/_widgets/",
+        "src/components/_widgets/*"
+      ],
+      "@config/*": [
+        "src/config/",
+        "src/config/*"
+      ],
+      "@redux-stores/*": [
+        "src/redux-stores/",
+        "src/redux-stores/*"
+      ],
+      "@slices/*": [
+        "src/slices/",
+        "src/slices/*" 
+      ],
+      "@styles/*": ["src/styles/*"],
+
+      "@globalStyles.module.scss": [
+        "src/styles/general.module.scss"
+      ],
+      "@globalStyles": [
+        "src/styles/general.module.tsx"
+      ],
+      "@src/*": [
+        "src/",
+        "src/*"
+      ]
+    }
+  },
+//  "baseUrl": "./src",
+  "include": [
+    "**/*",
+    "./src/vanguard/**/*",
+    "custom.d.ts",
+    "general.module.custom.d.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.stories.tsx"
+  ]
+}

@@ -1,0 +1,110 @@
+@import "./src/styles/spacings";
+@import "./src/styles/media-mixins";
+
+.media-item-container {
+  background-color: var(--n200);
+  border-radius: 4px;
+  overflow: hidden;
+
+
+  .to-be-deleted {
+    opacity: 0.3;
+  }
+
+  .media-item {
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    .overlay-options {
+      align-items: center;
+      background-color: rgba(var(--n900-rgb), .6);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      opacity: 0;
+      transition: all 400ms;
+      width: 100%;
+
+      &.selectable {
+        cursor: pointer;
+      }
+
+      .overlay-option-text {
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        gap: 4px;
+
+        &:hover {
+          width: 100%;
+          height: $x5;
+          border-radius: $x0_5;
+          margin-left: $x1;
+          margin-right: $x1;
+          background-color: rgba(var(--n100-rgb), 0.2);
+        }
+
+        &.disabled {
+          cursor: not-allowed !important;
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+
+        &.selectable {
+          opacity: 0.3;
+        }
+
+        &.is-selected {
+          opacity: 1;
+        }
+      }
+
+      &.is-selected {
+        opacity: 1;
+        background-color: rgba(var(--p500-rgb), .3);
+        border: $x0_25 solid var(--fn-bg-cta);
+      }
+
+      .action-container {
+        height: $x5;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: $x1;
+
+        .action-divider {
+          border-bottom: 1px solid var(--n000);
+          margin: 8px 16px 10px;
+          opacity: .5;
+          width: calc(100% - 32px);
+        }
+      }
+    }
+
+    .video-metadata-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(180deg, rgba(42, 53, 70, 0.00) 0%, #171D26 126.79%);
+      display: flex;
+      justify-content: end;
+      align-items: end;
+      height: 28px;
+
+      .video-duration {
+        margin-right: $x0_5;
+        margin-bottom: $x0_5;
+      }
+    }
+  }
+}

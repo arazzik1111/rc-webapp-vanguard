@@ -1,0 +1,79 @@
+@import "@styles/spacings";
+@import "@styles/media-mixins";
+
+.modal-footer {
+  width: 100%;
+  border-top: none;
+  box-sizing: border-box;
+  .modal-footer-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+
+    .modal-footer-group{
+      gap: $x2;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include media("<=mobile") {
+      flex-direction: column-reverse;
+      gap: 8px;
+
+      .Button-container {
+        width: 100%;
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .modal-footer-buttons-with-tertiary {
+    @include media("<=desktop") {
+      flex-direction: column-reverse;
+      gap: 8px;
+
+      .Button-container {
+        width: 100%;
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &.modal-footer-border {
+    border-top: 1px solid var(--n200);
+  }
+}
+
+/**
+ * FULLSCREEN MODAL
+ * ---------------------------------------------------------------------------------------------------------------------
+ */
+.modal-fullscreen {
+  .modal-footer {
+    position: fixed;
+    z-index: 1200;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    padding: 22px 32px;
+
+    box-shadow: inset 0 1px 0 #e6e9f0;
+    background-color: rgba(var(--n000-rgb), 0.8);
+    backdrop-filter: blur(5px);
+
+    .modal-footer-buttons {
+      margin: 0 auto;
+      max-width: 984px;
+    }
+  }
+}

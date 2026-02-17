@@ -1,0 +1,47 @@
+.PhotoPlaceholder-container {
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--n100);
+  text-align: center;
+  padding: 2px;
+  cursor: pointer;
+  gap: 10px;
+  transition: background-color 300ms linear;
+
+  &.format-square {
+    width: 152px;
+    height: 152px;
+  }
+
+  &.format-wide {
+    width: 274px;
+    height: 154px;
+  }
+
+  &:hover {
+    background: var(--n200);
+    text-decoration: none;
+  }
+
+  .PhotoPlaceholder-multiple-icons-container {
+    background-color: var(--p500);
+    width: 58px;
+    height: 58px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .first-icon {
+      transform: rotate(-10deg);
+    }
+
+    .second-icon {
+      transform: rotate(7deg);
+      margin-left: -3px;
+    }
+  }
+}

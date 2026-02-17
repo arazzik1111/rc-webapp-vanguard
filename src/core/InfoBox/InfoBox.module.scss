@@ -1,0 +1,34 @@
+@import "@styles/spacings";
+@import "@styles/media-mixins";
+
+.InfoBoxContainer {
+  display: flex;
+}
+
+.InfoBoxComponent {
+  padding: $x1 $x1 $x1 $x1_5;
+  border: $x0_125 solid;
+  display: flex;
+  //justify-content: center;
+  align-items: flex-start;
+
+  &.danger {
+    border-color: var(--e100);
+  }
+
+  &.info {
+    border-color: var(--p100);
+  }
+
+  &.warn {
+    border-color: var(--w100);
+  }
+
+  &.success {
+    border-color: var(--s100);
+  }
+
+  .close-btn {
+    height: auto;
+  }
+}

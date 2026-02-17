@@ -1,0 +1,9 @@
+@import "../../../styles/media-mixins";
+@import "../../../styles/spacings";
+
+.items {
+  display: flex;
+  flex-direction: row;
+  gap: $x2;
+  flex-wrap: wrap;
+}

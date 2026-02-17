@@ -1,0 +1,41 @@
+@import '@styles/spacings';
+@import '@styles/media-mixins';
+
+.container {
+  display: flex;
+  //align-items: center;
+  flex-direction: column;
+  gap: $x1;
+  justify-content: space-between;
+  align-items: start;
+  max-width: var(--colorPickerMaxWidth, 258px);
+  .input-container{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+  }
+}
+
+.label {
+  margin-right: $x1;
+  font-weight: bold;
+}
+
+.colorInput {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  border: 1px solid #ccc;
+  margin-right: $x1;
+  flex-shrink: 1 0 auto;
+
+}
+
+.textInput {
+  border: 1px solid #ccc;
+  padding: $x0_5;
+  font-family: Arial, sans-serif;
+  font-size: $x1_75;
+}

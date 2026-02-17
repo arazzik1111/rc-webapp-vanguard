@@ -1,0 +1,10 @@
+@import '../../../styles/spacings';
+@import '../../../styles/media-mixins';
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--n200);
+  overflow: hidden;
+}

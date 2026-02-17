@@ -1,0 +1,19 @@
+.TimePicker-container {
+  min-width: 120px;
+  position: relative;
+
+  .MuiSelect-icon {
+    display: none;
+  }
+
+  .TimePicker-icon {
+    right: 12px;
+    top: 16px;
+    position: absolute;
+  }
+
+  // Hide Bottom container, if no content inside it
+  .vanguard-input-bottom-container:empty {
+    display: none;
+  }
+}

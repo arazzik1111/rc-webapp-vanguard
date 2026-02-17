@@ -1,0 +1,9 @@
+@import '@styles/spacings';
+@import '@styles/media-mixins';
+
+.container {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

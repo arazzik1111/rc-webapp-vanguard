@@ -1,0 +1,5 @@
+{
+  "additionalKeepPatterns": [
+    "upsellTriggerGoogleAdsImage-*.mjs"
+  ]
+}

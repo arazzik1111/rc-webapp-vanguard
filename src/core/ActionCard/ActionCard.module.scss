@@ -1,0 +1,18 @@
+.card {
+  border-radius: 8px;
+  background-color: var(--fn-bg);
+  // TODO Test this
+  justify-content: space-between;
+  width: 100%;
+}
+
+.transparent {
+
+  background-color: rgba(var(--n000-rgb), 0.6);
+}
+
+.card-body {
+  padding: 16px 16px 16px 24px;
+
+}
+

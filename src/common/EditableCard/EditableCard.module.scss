@@ -1,0 +1,85 @@
+@import "@styles/media-mixins";
+@import "@styles/spacings";
+
+.container {
+  position: relative;
+  overflow: hidden;
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: $x1;
+    position: relative;
+
+    &.editButtonFloatRight {
+      justify-content: space-between;
+    }
+
+    @include media("<desktop") {
+      justify-content: space-between;
+    }
+
+    .actionBtns {
+      display: flex;
+      gap: $x1;
+      align-items: center;
+      justify-content: center;
+    }
+
+    >div {
+      display: flex;
+      align-items: center;
+      gap: $x1;
+    }
+  }
+
+  .content {
+    position: relative;
+    margin-top: $x2;
+  }
+
+  /** HOVERABLE **/
+  &.hoverable {
+    padding: 24px;
+    border-radius: 8px;
+    transition: 200ms ease-in all;
+
+    @include media("<tablet") {
+      padding: 8px;
+    }
+
+    &::before {
+      content: " ";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      transform: scale(0.75);
+      overflow: hidden;
+      transition: 200ms ease-in all;
+    }
+
+    &:hover {
+      &::before {
+        background-color: var(--n100);
+        transform: scale(1);
+        transition: 150ms ease-in all;
+      }
+    }
+  }
+
+  
+
+  &.editable {
+    cursor: pointer;
+  }
+
+  &.padding {
+    padding: 24px;
+
+    @include media("<=mobile") {
+      padding: 8px;
+    }
+  }
+}

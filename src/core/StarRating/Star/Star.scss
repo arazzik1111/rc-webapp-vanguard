@@ -1,0 +1,47 @@
+.rating {
+  position: relative;
+  display: inline-block;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+
+  &__result {
+    position: absolute;
+    overflow: hidden;
+    display: block;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    //border: 1px solid transparent;
+    box-sizing: border-box;
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      path {
+        display: block;
+        box-sizing: border-box;
+        animation: fillup .8s ease;
+        //fill: var(--p500);
+      }
+    }
+  }
+
+  &__max {
+    display: flex;
+    box-sizing: border-box;
+    //border: 1px solid transparent;
+    position: relative;
+
+    svg path {
+      animation: fillup .8s ease;
+    }
+  }
+}
+
+@keyframes fillup {
+  from {
+    width: 0;
+  }
+}

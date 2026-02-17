@@ -1,0 +1,154 @@
+@import "./src/styles/spacings";
+
+.vanguard-switch {
+  display: flex;
+
+  /**
+   * Switch Background Element
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  .vanguard-switch-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+
+    position: relative;
+    margin: 0;
+
+    border-radius: 16px;
+    border: 1px solid var(--n300);
+
+    background-color: var(--n000);
+    transition: background-color 0.3s ease;
+  }
+
+  .vanguard-switch-input:checked {
+    background-color: var(--button-primary-background-color);
+    border: 1px solid var(--button-primary-background-color);
+  }
+
+  .vanguard-switch-input:focus-visible {
+    outline: none;
+    border: 1px solid var(--p500);
+  }
+
+  .vanguard-switch-input:disabled {
+    cursor: not-allowed;
+    background-color: var(--button-primary-disabled-background-color);
+    border: 1px solid var(--button-primary-disabled-background-color);
+  }
+
+  /**
+   * Switch Circle Element
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  .vanguard-switch-input::before {
+    content: "";
+
+    position: absolute;
+    left: 2px;
+    top: 2px;
+
+    height: calc(100% - 4px);
+    width: calc(50% - 4px);
+    min-width: calc(50% - 4px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+
+    padding: 0;
+    margin: 0;
+
+    box-sizing: content-box;
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--n100);
+    box-shadow: 0px -2px 4px rgba(4, 5, 6, 0.05), 0px 8px 16px rgba(4, 5, 6, 0.1), 0px 4px 8px rgba(4, 5, 6, 0.1), 0px 2px 4px rgba(4, 5, 6, 0.15);
+  }
+
+  .vanguard-switch-input:hover::before,
+  .vanguard-switch-input:focus::before,
+  .vanguard-switch-input:focus-visible::before {
+    box-shadow: -1px 0 0 6px rgba(4, 5, 6, 0.1);
+  }
+
+  .vanguard-switch-input:checked::before {
+    left: auto;
+    right: calc(50% - 2px);
+    transform: translateX(100%);
+
+    background-color: var(--n000);
+    box-shadow: 0px -2px 4px rgba(0, 98, 255, 0.1), 0px 8px 16px rgba(0, 98, 255, 0.2), 0px 4px 8px rgba(0, 98, 255, 0.2), 0px 2px 4px rgba(0, 98, 255, 0.25);
+  }
+
+  .vanguard-switch-input:checked:hover::before,
+  .vanguard-switch-input:checked:focus::before,
+  .vanguard-switch-input:checked:focus-visible::before {
+    box-shadow: 1px 0 0 6px rgba(0, 98, 255, 0.2);
+  }
+
+
+  .vanguard-switch-input:disabled::before {
+    box-shadow: unset;
+  }
+
+  .vanguard-switch-input:disabled:hover::before,
+  .vanguard-switch-input:disabled:focus::before,
+  .vanguard-switch-input:disabled:focus-visible::before {
+    box-shadow: unset;
+  }
+
+  /**
+   * Label element
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  .vanguard-switch-label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+
+  .vanguard-switch-label-left {
+    margin-right: $x1;
+  }
+
+  .vanguard-switch-label-right {
+    margin-left: $x1;
+  }
+
+  .vanguard-switch-label-disabled {
+    cursor: not-allowed;
+  }
+
+  /**
+   * Size of Switch
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  .vanguard-switch-big {
+    height: 33px;
+    width: 64px;
+    min-width: 64px;
+  }
+
+  .vanguard-switch-small {
+    height: 20px;
+    width: 38px;
+    min-width: 38px;
+  }
+
+  @media screen and (max-width: 500px) {
+    .vanguard-switch-input {
+      outline: none;
+    }
+  }
+
+  /**
+   * ReadOnly State
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  .vanguard-switch-label-readonly {
+    pointer-events: none;
+  }
+}

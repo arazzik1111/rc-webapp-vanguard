@@ -1,0 +1,18 @@
+@import "./src/styles/spacings";
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: $x0_5;
+
+  .rating-value {
+    margin-right: $x1;
+    margin-left: $x1;
+  }
+
+  &.rating-align-top {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

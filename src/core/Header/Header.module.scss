@@ -1,0 +1,26 @@
+@import "./src/styles/spacings";
+
+.header {
+  max-width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.drawerHeader {
+  gap: $x1;
+}
+
+.bamHeader {
+  gap: $x2;
+  align-items: center;
+}
+
+.bamWithPreviewHeader {
+  gap: $x2;
+}
+
+.pageHeader, .sectionHeader, .compactSectionHeader{
+  gap: $x0_5;
+}

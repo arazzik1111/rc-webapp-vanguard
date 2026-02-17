@@ -1,0 +1,11 @@
+@import '../../styles/spacings';
+
+.list {
+  list-style-type: none;
+  padding-left: 0;
+  gap: $x9*2;
+}
+
+.flex-basis {
+  flex-basis: 75%;
+}

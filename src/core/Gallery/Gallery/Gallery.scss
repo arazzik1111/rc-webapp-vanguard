@@ -1,0 +1,15 @@
+@import "./src/styles/media-mixins";
+@import "./src/styles/spacings";
+
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  gap: $x2;
+
+  .gallery-list {
+    display: flex;
+    gap: $x1_75;
+    flex-wrap: wrap;
+    padding-bottom: $x3;
+  }
+}

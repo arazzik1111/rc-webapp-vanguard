@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 16px 0 16px;
+}
+
+.dot {
+  width: 0;
+  position: relative;
+}
+
+.avatar {
+  position: absolute;
+  background: var(--n500);
+  border-radius: 50%;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}

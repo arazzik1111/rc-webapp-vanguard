@@ -1,0 +1,1 @@
+export { GallerySummary } from './GallerySummary';

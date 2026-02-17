@@ -1,0 +1,34 @@
+@import "./src/styles/spacings";
+
+.list-item-icon {
+  list-style: none;
+  width: $x4;
+  height: $x4;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: $x1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+
+  &.selected {
+    border: $x0_25 solid var(--p500);
+  }
+}
+
+.list-item-comming-soon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: var(--n000);
+  background: var(--a1300);
+  box-shadow: 0px 2px 4px -1px rgba(29, 29, 32, 0.16), 0px 4px 5px rgba(29, 29, 32, 0.05), 0px 1px 10px rgba(29, 29, 32, 0.08);
+  border-radius: 5px;
+  //max-width: 145px;
+  margin: 25px 0 7px 0;
+  padding: 4px 8px;
+  line-height: 24px;
+}
+

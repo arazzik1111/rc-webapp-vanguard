@@ -1,0 +1,18 @@
+.progressCircleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.progressCircleValue {
+  stroke-linecap: round;
+  transition: 0.4s ease-in-out;
+}
+
+.progress {
+  position: absolute;
+  z-index: 10;
+  display: inline-flex;
+  align-items: end;
+}

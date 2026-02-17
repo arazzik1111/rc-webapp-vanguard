@@ -1,0 +1,22 @@
+@import "src/styles/media-mixins";
+
+$marginVal : 0 0 0 10px;
+
+.notif-source{
+  border: 1px solid gray;
+  border-radius:4px;
+  text-align: center;
+  display: inline-flex;
+  padding:1px 2px 1px 2px;
+  @include media('<mobile'){
+    margin:$marginVal;
+  }
+  &.own{
+    border-color: var(--s500) ;
+    color: var(--s500) ;
+  }
+  &.competitor{
+    border-color: var(--w500);
+    color: var(--w500);
+  }
+}

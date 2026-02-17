@@ -1,0 +1,33 @@
+@import './src/styles/media-mixins';
+
+.blurredTable {
+  position: relative;
+
+  .blurredMessageContainer {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    @include media('<mobile') {
+      transform: translate(-50%, -100%);
+
+    }
+    z-index: 1;
+    width: 100%;
+
+    .blurredMessage {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 4px;
+      max-width: 584px;
+      backdrop-filter: blur(1px);
+
+    }
+  }
+}

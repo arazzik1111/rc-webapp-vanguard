@@ -1,0 +1,3 @@
+.svgHoverEffect:hover path {
+  fill: var(--hover-color, currentColor); /* Fallback to currentColor if variable isn't set */
+}

@@ -1,0 +1,28 @@
+.quoteContainer {
+  position: relative;
+  width: 100%;
+  
+  .body {
+    position: relative;
+    z-index: 1; // Ensure content stays above the quote marks
+  }
+  
+  .quoteMarks {
+    position: absolute;
+    top: 50%;
+    left: 0px; // 40px from the left as requested
+    transform: translateY(-50%); // Center vertically
+    z-index: 0;
+    transform: rotate(180deg); // Rotate the SVG to be vertical
+    
+    svg {
+      width: 60px;
+      height: auto;
+      opacity: 0.15; // Make it subtle in the background
+      
+      path {
+        fill: rgba(var(--n500-rgb),0.5); // Use the accent color for the quote marks
+      }
+    }
+  }
+}

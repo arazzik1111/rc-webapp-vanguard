@@ -1,0 +1,7 @@
+export const MODAL_OPEN_TIMEOUT = 500;
+export const ONE_RENDER = 100;
+export const MODAL_CLOSE_TIMEOUT = 1000;
+export const AUTOCOMPLETE_OPEN_TIMEOUT = 500;
+export const REQUEST_SAVE_TIMEOUT = 1000;
+export const STEPPER_TRANSITION_TIMEOUT = 0;
+export const ANIMATED_CONDITIONAL_DEFAULT = 500;

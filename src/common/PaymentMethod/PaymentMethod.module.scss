@@ -1,0 +1,6 @@
+@import '../../../styles/spacings';
+
+.payment-container {
+    display: flex;
+    gap: $x2;
+}

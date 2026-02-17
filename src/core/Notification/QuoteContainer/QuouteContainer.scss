@@ -1,0 +1,24 @@
+.quote-container{
+
+  padding: 32px 24px;
+  width: 100%;
+  left: 48px;
+  top: 32px;
+
+  background: var(--n100);
+  border-radius: 8px;
+  margin: 24px 0;
+
+  .review-text{
+    margin-left:48px;
+    margin-right:48px;
+    text-align:center;
+  }
+
+
+  .quote-marks{
+    svg path {
+      fill: var(--a2-500)
+    }
+  }
+}

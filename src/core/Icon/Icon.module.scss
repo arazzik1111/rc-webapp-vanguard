@@ -1,0 +1,46 @@
+@import "src/styles/spacings";
+
+.icon {
+  font-family: var(--icon-font-family);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.circled {
+    border-width: 2px;
+    border-radius: 50%;
+    border-style: solid;
+  }
+
+  &.small {
+    height: $x1_5;
+    width: $x1_5;
+    font-weight: 700;
+    font-size: $x1_5;
+  }
+
+  &.large {
+    height: $x2;
+    width: $x2;
+    font-weight: 400;
+    font-size: $x2;
+  }
+
+
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 1200ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

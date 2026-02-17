@@ -1,0 +1,62 @@
+@import "@styles/spacings";
+@import "@styles/media-mixins";
+
+.socialMediaLink {
+  display: inline-flex;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: $x1;
+  padding: $x1;
+  gap: $x0_5;
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--fn-bg-hov-n-gl-rgb), 32%);
+    border-radius: $x1;
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 0;
+  }
+
+  &:hover {
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    .icon {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.icon {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.missingSocialMediaLink {
+  padding: $x1 ($x3 + $x0_5) $x1 $x1;
+  opacity: 0.5;
+}

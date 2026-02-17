@@ -1,0 +1,325 @@
+.vng-slider-container {
+  width: 100%;
+  height: 32px; //needed to correctly center in flex
+
+  /*
+   * -------------------------------------------------------------------------------------------------------------------
+   * SLIDER ROOT
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  .MuiSlider-root {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 32px;
+    padding: 0;
+
+    cursor: pointer;
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &.Mui-disabled {
+      pointer-events: none;
+      cursor: default;
+      opacity: 0.5;
+    }
+
+    /*
+     * RAIL
+     * -----------------------------------------------------------------------------------------------------------------
+     */
+    .MuiSlider-rail {
+      display: block;
+      position: absolute;
+
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+
+      background-color: var(--n200);
+      transition: all 0.3s ease;
+
+      opacity: 1
+    }
+
+    /*
+     * TRACK
+     * -----------------------------------------------------------------------------------------------------------------
+     */
+    .MuiSlider-track {
+      display: block;
+      position: absolute;
+
+      height: 8px;
+      border-radius: 4px;
+
+      background-color: var(--p500);
+      transition: background-color 0.3s ease;
+    }
+
+    &:hover {
+      .MuiSlider-track {
+        background-color: var(--p600);
+      }
+    }
+
+    &.MuiSlider-dragging {
+      .MuiSlider-track {
+        background-color: var(--p700);
+      }
+    }
+
+    /*
+     * THUMB
+     * -----------------------------------------------------------------------------------------------------------------
+     */
+    .MuiSlider-thumb {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      //margin-left: -16px;
+      //margin-top: -12px;
+
+      outline: 0;
+      box-sizing: border-box;
+      border-radius: 50%;
+
+      background-color: var(--p500); // @todo Had to use inline SVG, because Webpack is serving wrong urls
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.85829 7.99163L5.70829 5.1583L4.27496 3.7583L0.041626 7.99163L4.29163 12.2416L5.70829 10.825L2.85829 7.99163ZM13.125 7.99163L10.2916 10.825L11.7083 12.2416L15.9583 7.99163L11.7083 3.7583L10.2916 5.1583L13.125 7.99163ZM7.99163 10.0083C9.09163 10.0083 9.99163 9.12497 9.99163 8.0083C9.99163 6.9083 9.09163 6.0083 7.97496 6.0083C6.87496 6.0083 5.99163 6.9083 5.99163 8.0083C5.99163 9.12497 6.89163 10.0083 7.99163 10.0083Z' fill='white'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      box-shadow: 0 8px 24px rgba(4, 5, 6, 0.03), 0 4px 8px rgba(4, 5, 6, 0.05), 0 2px 2px rgba(4, 5, 6, 0.08);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+
+      &:hover {
+        background-color: var(--p700);
+      }
+
+      &.Mui-active {
+        background-color: var(--p700);
+      }
+    }
+
+    &:hover {
+      .MuiSlider-thumb {
+        background-color: var(--p700);
+      }
+    }
+
+
+    /*
+     * THUMB
+     * -----------------------------------------------------------------------------------------------------------------
+     */
+    span.MuiSlider-markLabel {
+      &:first-of-type {
+        display: none;
+      }
+    }
+    .MuiSlider-markLabel {
+      position: absolute;
+      top: -30px;
+      font-size: 12px;
+      line-height: 16px;
+      font-family: var(--text-typeface);
+      font-weight: var(--theme-weight-medium);
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+
+      &:first-of-type {
+        align-items: flex-start;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+      }
+
+      &:nth-child(1) {
+        align-items: flex-end;
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        transform: translateX(-100%);
+      }
+
+      &::after {
+        content: "";
+        width: 1px;
+        height: 8px;
+        background-color: var(--n200);
+        // position: absolute;
+        // top: 18px;
+        // left: 0;
+        // text-align: center;
+      }
+    }
+
+
+
+    /*
+     * VALUE LABEL
+     * -----------------------------------------------------------------------------------------------------------------
+     */
+    .MuiSlider-valueLabel {
+      background: var(--n000);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 16px;
+
+      text-align: center;
+      font-weight: bold;
+      color: var(--n700);
+
+      transition: opacity 0.1s ease;
+      opacity: 0;
+
+      &.MuiSlider-valueLabelOpen {
+        opacity: 1;
+      }
+    }
+  }
+
+  /*
+   * -------------------------------------------------------------------------------------------------------------------
+   * SIZE: Small
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  &.vng-slider-size-small {
+    height: 24px; //needed to correctly center in flex
+
+    .MuiSlider-root {
+      height: 24px;
+      padding: 0;
+
+      .MuiSlider-rail {
+        height: 4px;
+        border-radius: 4px;
+      }
+
+      .MuiSlider-track {
+        height: 4px;
+        border-radius: 4px;
+      }
+
+      .MuiSlider-thumb {
+        width: 24px;
+        height: 24px;
+        //margin-left: -12px;
+        //margin-top: -10px;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.85829 7.99163L5.70829 5.1583L4.27496 3.7583L0.041626 7.99163L4.29163 12.2416L5.70829 10.825L2.85829 7.99163ZM13.125 7.99163L10.2916 10.825L11.7083 12.2416L15.9583 7.99163L11.7083 3.7583L10.2916 5.1583L13.125 7.99163ZM7.99163 10.0083C9.09163 10.0083 9.99163 9.12497 9.99163 8.0083C9.99163 6.9083 9.09163 6.0083 7.97496 6.0083C6.87496 6.0083 5.99163 6.9083 5.99163 8.0083C5.99163 9.12497 6.89163 10.0083 7.99163 10.0083Z' fill='white'/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+
+  /*
+   * -------------------------------------------------------------------------------------------------------------------
+   * THEME: Simple (used in Cropper)
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  &.vng-slider-simple {
+    .MuiSlider-root {
+      .MuiSlider-rail {
+        background-color: var(--n100);
+      }
+
+      .MuiSlider-track {
+        background-color: var(--n100);
+      }
+
+      &:hover {
+        .MuiSlider-track {
+          background-color: var(--n200);
+        }
+      }
+
+      &.MuiSlider-dragging {
+        .MuiSlider-track {
+          background-color: var(--n200);
+        }
+      }
+
+      .MuiSlider-thumb {
+        border: 2px solid var(--n300);
+        background: var(--n000);
+        box-shadow: none;
+
+        &:hover {
+          background-color: var(--n000);
+          border: 2px solid var(--n400);
+        }
+
+        &.Mui-active {
+          background-color: var(--n000);
+          border: 2px solid var(--n400);
+        }
+      }
+
+      &:hover {
+        .MuiSlider-thumb {
+          background-color: var(--n000);
+          border: 2px solid var(--n400);
+        }
+      }
+    }
+  }
+
+  /*
+ * -------------------------------------------------------------------------------------------------------------------
+ * THEME: primary (used in Cropper)
+ * -------------------------------------------------------------------------------------------------------------------
+ */
+  &.vng-slider-primary {
+    .MuiSlider-root {
+      .MuiSlider-rail {
+        background-color: var(--n100);
+        z-index: 1;
+
+      }
+
+      .MuiSlider-track {
+        background-color: var(--p500);
+        z-index: 3;
+      }
+
+      &:hover {
+        .MuiSlider-track {
+          background-color: var(--p600);
+        }
+      }
+
+      &.MuiSlider-dragging {
+        .MuiSlider-track {
+          background-color: var(--p600);
+        }
+      }
+
+      .MuiSlider-thumb {
+        background: var(--n000);
+        box-shadow: none;
+        filter: drop-shadow(4px 0px 2px rgba(4, 5, 6, 0.15));
+        z-index: 3;
+
+        &:hover {
+          background-color: var(--n000);
+        }
+
+        &.Mui-active {
+          background-color: var(--n000);
+        }
+      }
+
+      &:hover {
+        .MuiSlider-thumb {
+          background-color: var(--n000);
+        }
+      }
+    }
+  }
+}

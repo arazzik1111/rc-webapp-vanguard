@@ -1,0 +1,14 @@
+@import "./src/styles/spacings";
+
+.spacer {
+  margin-right: $x4;
+}
+.link-color {
+  color: var(--brand-color);
+}
+
+.disabled {
+  &.link-color {
+    color: var(--n300)!important;
+  }
+}

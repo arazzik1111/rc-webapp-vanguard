@@ -1,0 +1,55 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+package-lock.json
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+/storybook-static
+/storybook-static/*
+/src/*/*.zip
+/dist
+
+# Coverage reports
+coverage/
+**/coverage/
+
+# TypeScript build info files
+.tsbuildinfo
+.tsbuildinfo-*
+
+# Vanguard configuration (user-specific)
+.vanguardrc
+.zencoder
+/dist-wordpress/
+
+# Dynamic import analysis output files
+dynamic-import-analysis.json
+dynamic-import-analysis-simple.json
+
+# Version files
+dist/.version
+dist-wordpress/.version
+
+# Environment variables
+.env
+.env.local
+.env.*.local

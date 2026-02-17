@@ -1,0 +1,9 @@
+@import 'src/styles/spacings';
+
+.tabs-container {
+  position: relative;
+
+   > div > div {
+     gap: $x0_25;
+   }
+}

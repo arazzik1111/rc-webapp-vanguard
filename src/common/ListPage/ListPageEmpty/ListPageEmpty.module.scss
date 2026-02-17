@@ -1,0 +1,16 @@
+@import "src/styles/spacings";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: $x1 + $x0_25;
+}
+
+.img {
+  margin-left: $x9 + $x1_75;
+}
+
+

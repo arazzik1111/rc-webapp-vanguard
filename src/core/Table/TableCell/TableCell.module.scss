@@ -1,0 +1,51 @@
+@import "./src/styles/spacings";
+
+.table-cell {
+  padding: $x1;
+  flex: 1;
+  text-align: left;
+  border-bottom: 1px solid var(--n200);
+  line-height: 32px;
+  position: relative;
+
+  &.table-grey-body {
+    background-color: var(--n100);
+  }
+  .cell-prefix {
+    padding: 8px;
+  }
+
+  .table-centered {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .table-end {
+    justify-content: end;
+    align-items: center;
+    text-align: end;
+  }
+
+  &.table-sticky {
+    position: sticky;
+    left: 0;
+    background-color: var(--fn-bg);
+    z-index: 1;
+  }
+
+  &.table-seam-shadow::after {
+    content: '';
+    position: absolute;
+    top: -$x0_125;
+    bottom: -$x0_125;
+    left: calc(100% - ($x0_25 + $x0_125));
+    width: $x1 + $x0_25;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(var(--n400-rgb), 0.45) 0, rgba(var(--n400-rgb), 0.30) 0, rgba(var(--n400-rgb), 0.12) $x0_25, rgba(var(--n400-rgb), 0) 100%);
+  }
+
+  .value {
+    min-width: 31px;
+    text-align: end; // This is a mistake, consider removing it
+  }
+}

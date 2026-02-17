@@ -1,0 +1,30 @@
+@import "@styles/spacings";
+@import "@styles/media-mixins";
+
+.text-edit-drawer-container {
+  @include media('>mobile') {
+    width: 576px;
+  }
+}
+
+.text-box-container {
+  padding: $x2 0;
+  margin: $x1_5 0;
+  display: grid;
+  gap: $x1;
+}
+
+.restore-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.text-edit-drawer-title {
+  margin-bottom: $x2;
+}
+
+.text-edit-drawer-actions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

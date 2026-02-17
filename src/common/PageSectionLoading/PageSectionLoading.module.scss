@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.img-small {
+  max-width: 80px!important;
+  margin-top: 8px;
+}
+
+.img-medium {
+  max-width: 130px!important;
+  margin-top: 16px;
+}
+
+.img-large {
+  max-width: 200px!important;
+  margin-top: 24px;
+}
+

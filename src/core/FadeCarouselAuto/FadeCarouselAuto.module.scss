@@ -1,0 +1,47 @@
+@import '@styles/spacings';
+
+.carousel {
+  position: relative;
+  width: 100%;
+  //overflow: scroll;
+}
+
+.scroll-container {
+  display: flex;
+  //animation: scrollLeft linear infinite;
+  width: 100%;
+  overflow-x: hidden;
+  padding-left: $x0_5;
+}
+//.scroll-container::before {
+//  content: "";
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  height: 100%;
+//  width: 180px; /* Adjust the width as needed */
+//  background: linear-gradient(to right, #F5F7F9, rgba(245, 247, 249, 0));
+//  pointer-events: none; /* Allows interactions with underlying content */
+//  z-index: 1;
+//}
+
+.carouselItem {
+  flex: 0 0 auto;
+  //width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+  z-index: 3;
+  &:hover {
+    //z-index:3;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

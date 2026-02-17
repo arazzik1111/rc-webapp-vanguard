@@ -1,0 +1,91 @@
+@import './src/styles/spacings';
+@import "./src/styles/media-mixins";
+
+.carouselContainer {
+  position: relative;
+  display: inline-block;
+  justify-content: center;
+  white-space: nowrap;
+  width: 100%;
+
+  @include media('<mobile') {
+    white-space: unset;
+  }
+}
+
+.before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(-80%);
+  height: 100%;
+  background: linear-gradient(90deg, var(--n000) 50.33%, rgba(255, 255, 255, 0.00) 100%);
+  z-index: 9;
+  width: 35vw;
+  pointer-events: none;
+}
+
+.after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(80%);
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, var(--n000) 50.6%);
+  z-index: 9;
+  width: 35vw;
+  pointer-events: none;
+}
+
+.carouselArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  border: none !important;
+
+  &:hover {
+    background-color: var(--arrow-hover-color, rgba(4, 5, 6, 0.8)) !important;
+  }
+}
+
+.arrowBorder {
+  border: $x0_5 solid var(--n000) !important;
+}
+
+.arrowLeft {
+  left: $x0_5;
+}
+
+.arrowRight {
+  right: $x0_5;
+}
+
+.carouselItem {
+  display: inline-block;
+  padding-right: $x1;
+  padding-left: $x1;
+  transition: margin ease-in-out 0.3s;
+
+  @include media('<mobile') {
+    margin-left: unset !important;
+    margin-right: unset !important;
+  }
+}
+
+.carouselItemsContainer {
+  @include media('<mobile') {
+    display: flex;
+    flex-direction: column;
+    margin-left: $x2_5;
+  }
+}
+
+.carouselScroll {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: $x1_5;
+}
+

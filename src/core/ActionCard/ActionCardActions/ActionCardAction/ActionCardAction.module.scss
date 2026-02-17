@@ -1,0 +1,106 @@
+@import "@styles/spacings";
+@import "@styles/media-mixins";
+
+// To correlate all transition animation time -> button color / background / text background
+$transitionTime: 0.2s;
+$loader-color: var(--p100);
+$loader-color2: var(--p400);
+$loader-spinner: $x2;
+$loader-spinner-t: $x2;
+$loader-timing: 850ms;
+
+.action{
+  /* Auto Layout */
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 250ms;
+
+  &:hover {
+    background-color: var(--n100);
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px 12px 8px;
+
+  height: 48px;
+  /* Neutral/$n000 */
+
+  background: var(--n000);
+  /* Divider/top */
+
+  border-radius: 0 0 8px 8px;
+  gap: 10px;
+}
+
+.action-disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+
+  &:hover {
+    background-color: var(--n000);
+  }
+}
+
+
+.loader-spinner {
+  width: $loader-spinner;
+  height: $loader-spinner;
+  //margin-right: calc(#{$loader-spinner} / 2);
+  //margin-left: calc(#{$loader-spinner} / 2);
+  position: relative;
+
+  &.loader-left {
+    margin-right: $x1;
+  }
+
+  &.loader-right {
+    margin-left: $x1;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+
+    width: $loader-spinner;
+    height: $loader-spinner;
+
+    background: conic-gradient(transparent 60deg, $loader-color 180deg, $loader-color2);
+
+    animation: spin $loader-timing linear infinite;
+    //filter: blur(calc(#{$loader-spinner} / 50));
+
+    mask-size: $loader-spinner;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-image: url("data:image/svg+xml,%3Csvg fill='none' height='32' viewBox='0 0 32 32' width='32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath clip-rule='evenodd' d='m16 32c8.8364 0 16-7.1635 16-16 0-8.83655-7.1636-16-16-16-8.83643 0-16 7.16345-16 16 0 8.8365 7.16357 16 16 16zm0-4c6.6274 0 12-5.3726 12-12 0-6.62741-5.3726-12-12-12-6.62744 0-12 5.37259-12 12 0 6.6274 5.37256 12 12 12z' fill='%23c4c4c4' fill-rule='evenodd'/%3E%3C/svg%3E");
+
+  }
+
+  svg {
+    opacity: 0;
+  }
+
+  @include media('>tablet') {
+    width: $loader-spinner-t;
+    height: $loader-spinner-t;
+    //margin-right: calc(#{$loader-spinner-t} / 2);
+    &:before {
+      width: $loader-spinner-t;
+      height: $loader-spinner-t;
+      mask-size: $loader-spinner-t;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

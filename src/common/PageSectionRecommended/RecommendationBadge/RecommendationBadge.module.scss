@@ -1,0 +1,39 @@
+@import '../../../../styles/media-mixins';
+
+.container {
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  position: absolute;
+  left: -16px;
+  top: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 12px;
+  background-color: var(--s400);
+  border-radius: 0 4px 4px 0;
+  transform: matrix(1, -0.07, 0.07, 1, 0, 0);
+
+  // JUMP page paddings becomes 0 on small devices
+  @media (max-width: 480px) {
+    transform: none;
+    left: 0;
+  }
+}
+
+.corner {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 12px 12px 0;
+  border-color: transparent var(--s500) transparent transparent;
+  left: 0;
+  bottom: -11.5px;
+
+  // JUMP page paddings becomes 0 on small devices
+  @media (max-width: 480px) {
+    display: none;
+  }
+}

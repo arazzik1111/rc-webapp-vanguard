@@ -1,0 +1,439 @@
+@import "@styles/spacings";
+@import "@styles/media-mixins";
+
+.vanguard-input {
+  /**
+   * -------------------------------------------------------------------------------------------------------------------
+   * FORM CONTROL
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  position: relative;
+
+  .MuiFormControl-root {
+  }
+
+  /**
+   * -------------------------------------------------------------------------------------------------------------------
+   * LABEL
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  .MuiInputLabel-root {
+    color: var(--n500);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    transform: translate(12px, 12px) scale(1);
+    padding: 0 6px;
+    background: none;
+    z-index: 2;
+
+    &.MuiInputLabel-shrink {
+      font-weight: 500;
+      line-height: 18px;
+      transform: translate(12px, -10px) scale(0.875);
+      background: var(--white);
+      border-radius: 2px;
+      padding: 2px 6px;
+      box-sizing: border-box;
+    }
+
+    &.Mui-focused {
+      color: var(--p500);
+
+      &.Mui-error {
+        color: var(--e500);
+      }
+    }
+
+    &.Mui-error {
+      color: var(--n500);
+    }
+
+    &.Mui-disabled {
+      color: var(--n500);
+    }
+  }
+
+  // The optional sign (shown when field is not required)
+  .vanguard-input-label-optional {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    margin-left: 8px;
+    margin-right: 2px;
+    color: var(--n400);
+  }
+
+  // custom styles for inputs without floating label
+  &.vanguard-label-outer,
+  &.vanguard-label-hidden {
+    margin-top: 0;
+
+    .MuiInputLabel-root {
+      color: var(--n700);
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 500;
+      position: relative;
+      transform: none;
+      padding: 0 6px;
+      background: none;
+      margin-bottom: 5px;
+
+      &.MuiInputLabel-shrink {
+        padding: 0 6px;
+      }
+    }
+  }
+
+  // by default, MUI adds an asterisk to the label, if field is required
+  .MuiInputLabel-asterisk {
+    display: none;
+  }
+
+  // makes default background for label --> this code removes it
+  legend {
+    display: none;
+  }
+
+  /**
+   * -------------------------------------------------------------------------------------------------------------------
+   * INPUT
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+
+  .MuiOutlinedInput-root {
+    font-family: var(--text-typeface);
+    font-weight: var(--theme-weight-regular);
+    padding: unset;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+    transition: all 0.2s ease-in-out;
+    background: var(--white);
+
+    .MuiOutlinedInput-input {
+      padding: 12px 18px;
+      z-index: 1;
+    }
+
+    // makes borders for inputs
+
+    fieldset {
+      padding: 0;
+      top: 0;
+      font-size: 14px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: var(--n300);
+      z-index: 0;
+    }
+
+    &:hover {
+      fieldset {
+        border-color: var(--p500);
+      }
+
+      &.Mui-disabled {
+        fieldset {
+          border-color: var(--n300);
+        }
+      }
+    }
+
+    &.Mui-focused {
+      fieldset {
+        border-width: 1px;
+        border-color: var(--p400);
+      }
+    }
+
+    &.Mui-error {
+      fieldset {
+        border-width: 1px;
+        border-color: var(--e500);
+      }
+    }
+
+    &.Mui-disabled {
+      fieldset {
+        border-width: 1px;
+        border-color: var(--n300);
+        background: var(--n200);
+      }
+    }
+  }
+
+  /**
+   * BACKDROP & HIGHLIGHTS
+   */
+  .vanguard-input-backdrop {
+    position: absolute;
+    z-index: 1;
+    padding: 12px 18px;
+    box-sizing: border-box;
+    overflow: hidden;
+    pointer-events: none;
+
+    .vanguard-input-highlights {
+      color: transparent;
+      font-family: var(--text-typeface);
+      font-weight: var(--theme-weight-regular);
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: normal;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      word-break: break-word;
+
+      .vanguard-input-mark-red {
+        border-radius: 3px;
+        color: transparent;
+        background-color: var(--e100);
+      }
+
+      .vanguard-input-mark-green {
+        border-radius: 3px;
+        color: transparent;
+        background-color: var(--s100);
+      }
+
+      .vanguard-input-mark-blue {
+        border-radius: 3px;
+        padding: 3px;
+        color: transparent;
+
+        background-color: var(--p100);
+      }
+    }
+  }
+
+  /**
+   * -------------------------------------------------------------------------------------------------------------------
+   * PLACEHOLDER
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+
+  .MuiOutlinedInput-root {
+    .MuiOutlinedInput-input {
+      &::placeholder {
+        color: var(--n400) !important;
+      }
+    }
+  }
+
+  &.vanguard-label-outer,
+  &.vanguard-label-hidden {
+    .MuiOutlinedInput-root {
+      .MuiOutlinedInput-input {
+        &::placeholder {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+
+  /**
+   * -------------------------------------------------------------------------------------------------------------------
+   * UI: TEXTAREA
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+
+  .MuiInputBase-inputMultiline {
+  }
+
+  /**
+   * -------------------------------------------------------------------------------------------------------------------
+   * UI: SELECT
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+
+  .MuiSelect-select {
+    padding: 12px 18px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  /**
+   * -------------------------------------------------------------------------------------------------------------------
+   * BOTTOM CONTAINER   [ INFO TEXT | COUNTER ]
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  .MuiFormHelperText-root {
+    margin: 0;
+    padding: 0;
+
+    .vanguard-input-bottom-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 8px 14px 0;
+      color: var(--n500);
+
+      .vanguard-input-bottom-container-line {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-content: space-between;
+
+        .vanguard-input-info-text,
+        .vanguard-input-error-text {
+          font-size: 12px;
+          line-height: 14px;
+          flex-grow: 1;
+        }
+
+        .vanguard-input-counter {
+          font-size: 12px;
+          line-height: 14px;
+          color: inherit;
+          margin-left: auto;
+        }
+      }
+
+      a:has(.vanguard-input-helper-link-button) {
+        width: fit-content;
+      }
+    }
+
+  }
+
+  // ColorPicker-specific helper text alignment
+  &.vanguard-input-type-colorpicker {
+    .MuiFormHelperText-root {
+      margin-left: -($x8 + $x0_125); // -65px using spacing tokens
+    }
+  }
+
+  /**
+   * -------------------------------------------------------------------------------------------------------------------
+   * ADORNMENTS (icons, buttons)
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  .MuiInputAdornment-root {
+    z-index: 1;
+
+    &.MuiInputAdornment-positionEnd {
+      margin-right: 8px;
+    }
+    &.MuiInputAdornment-positionStart {
+      margin-left: 14px;
+    }
+  }
+
+  /**
+   * -------------------------------------------------------------------------------------------------------------------
+   * LOADING
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  &.vanguard-input-loading {
+    textarea,
+    input {
+      color: transparent;
+    }
+
+    .vanguard-textarea-skeleton {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 12px 18px;
+      z-index: 1;
+    }
+
+    .vanguard-input-skeleton {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 2px 18px;
+      z-index: 1;
+    }
+
+    .MuiOutlinedInput-root {
+      .MuiOutlinedInput-input {
+        &::placeholder {
+          color: transparent !important;
+        }
+      }
+    }
+
+    &.vanguard-label-outer,
+    &.vanguard-label-hidden {
+      .MuiOutlinedInput-root {
+        .MuiOutlinedInput-input {
+          &::placeholder {
+            color: transparent !important;
+          }
+        }
+      }
+    }
+  }
+
+  &.vanguard-input-type-number-rounded {
+    //Mozilla
+    input[type="number"] {
+      -moz-appearance: textfield;
+      appearance: textfield;
+      margin: 0;
+    }
+
+    //Chrome
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  /**
+   * -------------------------------------------------------------------------------------------------------------------
+   * THEME: Grey
+   * -------------------------------------------------------------------------------------------------------------------
+   */
+  &.vanguard-input-grey {
+    background: var(--fn-bg-var);
+
+    .MuiOutlinedInput-root {
+      height: 32px;
+
+      fieldset {
+        border: unset;
+      }
+
+      &:hover {
+        fieldset {
+          border: unset;
+        }
+
+        &.Mui-disabled {
+          fieldset {
+            border: unset;
+          }
+        }
+      }
+
+      &.Mui-focused {
+        fieldset {
+          border: unset;
+        }
+      }
+
+      &.Mui-error {
+        fieldset {
+          border: unset;
+        }
+      }
+
+      &.Mui-disabled {
+        fieldset {
+          border: unset;
+        }
+      }
+    }
+  }
+}

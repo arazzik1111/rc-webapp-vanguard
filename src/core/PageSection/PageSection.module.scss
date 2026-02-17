@@ -1,0 +1,108 @@
+@import "@styles/spacings";
+@import "@styles/media-mixins";
+
+.functionalBg {
+  background-color: var(--fn-bg);
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.gradientRc {
+  background: linear-gradient(198deg, rgba(145, 53, 168, 0.00) 77.49%, #9135A8 102.76%), linear-gradient(142deg, rgba(65, 88, 227, 0.00) 55.57%, #4158E3 94.62%), radial-gradient(42.86% 14.53% at 76.88% 14.51%, rgba(166, 48, 153, 0.24) 0%, rgba(166, 48, 153, 0.00) 100%), radial-gradient(47.98% 27.67% at 93.55% 47.92%, #7AC8E7 0%, rgba(61, 188, 222, 0.00) 100%), radial-gradient(38.14% 23.87% at 20.52% 13.19%, #6ACFEA 0%, rgba(61, 188, 222, 0.00) 100%), radial-gradient(72.95% 40.89% at 24.94% 25.76%, #3DBCDE 0%, rgba(61, 188, 222, 0.00) 100%), linear-gradient(245deg, #2471FB 8.81%, #2E91EF 31.6%, #3266E6 69.98%, #D1267B 87.83%);
+}
+
+.gradientBgVarTop {
+  background: linear-gradient(180deg, var(--fn-bg) 0%, var(--fn-bg-var) 18.27%);
+}
+
+.gradientBgVarBottom {
+  background: linear-gradient(180deg, var(--fn-bg-var) 84.25%, var(--fn-bg) 100%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $x3;
+
+  &.defaultPadding {
+    padding: $x3 $x8;
+
+    @include media("<desktop") {
+      padding-left: $x4;
+      padding-right: $x4;
+    }
+
+    @include media("<tablet") {
+      padding-left: $x3;
+      padding-right: $x3;
+    }
+  }
+
+  &.frostedGlass {
+
+    &.defaultPadding {
+      padding: $x6 $x8;
+
+      @include media("<desktop") {
+        padding: $x4;
+      }
+
+      @include media("<tablet") {
+        padding: $x3;
+      }
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: $x3;
+
+  @include media("<tablet") {
+    flex-direction: column;
+    gap: $x2;
+  }
+}
+
+.roundedTop {
+  border-top-left-radius: $x1;
+  border-top-right-radius: $x1;
+
+  &.defaultPadding {
+    padding-top: $x6;
+  }
+
+  &.frostedGlass {
+    border-top: 0;
+    border-top-left-radius: $x4;
+    border-top-right-radius: $x4;
+  }
+
+  @include media("<mobile") {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.roundedBottom {
+  border-bottom-left-radius: $x1;
+  border-bottom-right-radius: $x1;
+
+  &.defaultPadding {
+    padding-bottom: $x6;
+  }
+
+  &.frostedGlass {
+    border-bottom: 0;
+    border-bottom-left-radius: $x4;
+    border-bottom-right-radius: $x4;
+  }
+
+  @include media("<mobile") {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

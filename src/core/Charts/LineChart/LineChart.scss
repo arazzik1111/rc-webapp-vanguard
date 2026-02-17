@@ -1,0 +1,128 @@
+@import './src/styles/media-mixins';
+@import './src/styles/spacings';
+
+.lineChart-container {
+  position: relative;
+
+  .lineChart-header {
+    margin-bottom: -33px;
+
+    @include media('<tablet') {
+      margin-bottom: 0;
+    }
+  }
+
+  .lineChart-infoIcon {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    align-items: center;
+    margin-right: 16px;
+
+    @include media('<tablet') {
+      margin-right: 0;
+      justify-content: center;
+    }
+  }
+
+  div:not(:last-child) {
+    &.lineChart-infoIcon {
+      margin-bottom: 16px;
+    }
+  }
+
+  .apexchartsrcLineChart {
+    .apexcharts-xcrosshairs {
+      stroke-dasharray: none;
+      stroke-width: 2px;
+      stroke: #2A3546; //todo: replace this with --fn-fg variable
+    }
+
+    .apexcharts-xaxistooltip {
+      display: none;
+    }
+
+    .apexcharts-gridline {
+      stroke-dasharray: 3;
+      stroke: rgba(4, 5, 6, 0.2); // todo: replace with opacity/n900/20
+    }
+
+    .apexcharts-xaxis-texts-g {
+      transform: translate(0px, -10px);
+    }
+
+    .apexcharts-yaxis-label, .apexcharts-xaxis-label {
+      fill: var(--n600);
+    }
+
+    .apexcharts-legend.apexcharts-align-right .apexcharts-legend-series, .apexcharts-legend.apexcharts-align-left .apexcharts-legend-series {
+      display: inline-flex;
+      justify-content: center;
+      align-items: baseline;
+    }
+
+    .apexcharts-legend.apx-legend-position-top.apexcharts-align-left {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $x2;
+    }
+
+    .apexcharts-legend {
+      padding: 0px;
+    }
+
+    .apexcharts-legend-text {
+      color: var(--n700) !important;
+      line-height: 16px;
+      cursor: pointer;
+
+      .totalValue {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 12px;
+        color: var(--n500);
+      }
+    }
+
+    .rcLineChart-tooltip {
+      background: #171D26;
+      box-shadow: 0 8px 24px rgba(4, 5, 6, 0.08), 0 4px 8px rgba(4, 5, 6, 0.05), 0 2px 2px rgba(4, 5, 6, 0.03);
+      border-radius: 4px;
+      padding: 8px 16px;
+      color: var(--n000);
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+
+      .rcLineChart-tooltip-title {
+        margin-top: 0;
+        margin-bottom: 4px;
+        color: var(--n000);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      .rcLineChart-tooltip-row {
+        display: flex;
+        margin-bottom: 4px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .rcLineChart-tooltip-color {
+          width: 12px;
+          height: 12px;
+          border-radius: 12px;
+          margin-right: 4px;
+        }
+
+        .rcLineChart-tooltip-row-number {
+          font-weight: 700;
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+}

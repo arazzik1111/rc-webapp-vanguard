@@ -1,0 +1,23 @@
+/**
+ * CTA
+ * ---------------------------------------------------------------------------------------------------------------------
+ */
+.ctaContainer {
+  overflow: hidden;
+
+}
+
+.cta {
+  width: 100%;
+  background: var(--n000) !important;
+  justify-content: flex-start !important;
+  border-radius: 16px!important;
+  border: 10px solid red;
+
+  &:hover {
+    background: var(--p100) !important;
+    color: var(--p500) !important;
+  }
+}
+
+

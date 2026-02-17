@@ -1,0 +1,16 @@
+@import '@styles/spacings';
+
+.info-icon-modal-puller {
+  position: absolute;
+  top: -$x1_5;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+  width: $x6;
+  height: $x1 - $x0_5;
+  background: #FFFF;
+  border-radius: $x0_5;
+}
+

@@ -1,0 +1,24 @@
+@import "./src/styles/spacings";
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+
+    &.border-radius {
+        border-radius: $x1;
+    }
+
+    .media-type-info {
+        position: absolute;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(42, 53, 70, 0.00) 21.79%, #171D26 126.79%);
+        bottom: 0;
+        left: 0;
+        height: $x5;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding: $x0_5 + $x0_25;
+        gap: $x0_5;
+    }
+}

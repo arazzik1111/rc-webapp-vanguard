@@ -1,0 +1,41 @@
+@import "./src/styles/spacings";
+@import './src/styles/media-mixins';
+
+.recommendation-card {
+    border-radius: $x3;
+    border: 1px solid var(--a1-100);
+    background: var(--fn-bg);
+    box-shadow: 0px 0px 0px 3px rgba(232, 229, 250, 0.25);
+    padding: $x6;
+    position: relative;
+    overflow: hidden;
+
+    @include media("<=mobile") {
+        padding: $x3;
+    }
+
+    .recommendation-badge {
+        background-color: var(--sc-charts-01-op10);
+        border-radius: 100px;
+        width: fit-content;
+        padding: $x1 $x1_5 $x1 $x1;
+        display: flex;
+    }
+
+    .learn-more-button {
+        background: var(--n800);
+        padding: 4px 16px;
+        border-radius: 24px;
+        position: absolute;
+        bottom: $x1;
+        right: $x1;
+        cursor: pointer;
+        display: flex;
+    }
+
+    .card-illustration {
+        @include media("<tablet") {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@import './src/styles/media-mixins';
+
+.bottom-stepper-steps {
+  @include media('<mobile') {
+    display: none;
+  }
+}
+
+.stepper-position {
+  &-left {
+    justify-content: flex-start;
+  }
+
+  &-right {
+    justify-content: flex-end;
+  }
+
+  &-center {
+    justify-content: center;
+  }
+}
+
+
+.padded {
+  padding-right: clamp(1rem, -36.463rem + 58.54vw, 25rem);
+  padding-left: clamp(1rem, -36.463rem + 58.54vw, 25rem);
+}

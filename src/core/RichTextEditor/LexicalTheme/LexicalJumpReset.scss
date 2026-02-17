@@ -1,0 +1,18 @@
+.vanguard-rich-text-editor-jump-reset {
+  color: var(--text-color);
+
+  p {
+    color: var(--text-color);
+  }
+
+  a {
+    color: var(--p500);
+    text-decoration: none;
+    transition: opacity 0.5s;
+
+    &:hover {
+      color: var(--p700);
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import 'src/styles/spacings';
+
+.phone-number-component {
+    display: flex;
+    gap: $x2;
+    .phone-number-prefix {
+        flex: 40;
+    }
+    .phone-number-base {
+        flex: 60;
+    }
+}
