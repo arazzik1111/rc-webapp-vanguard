@@ -1,15 +1,16 @@
 {
-  "name": "vanguard",
+  "name": "@rankingcoach/vanguard",
   "description": "rC React components library",
   "author": "rankingCoach GmbH",
   "private": false,
   "sideEffects": false,
-  "version": "0.1.192",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.rankingcoach.com/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "bin": {
     "vanguard": "./scripts/vanguard-cli.js"
